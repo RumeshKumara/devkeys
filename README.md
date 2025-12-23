@@ -1,36 +1,206 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here is a **professional, portfolio-ready `README.md`** for your project **DevKeys**.
+You can **copy–paste directly** into your GitHub repository.
 
-## Getting Started
+---
 
-First, run the development server:
+# 🚀 DevKeys
+
+**DevKeys** is a modern, AI-powered web application that brings **developer shortcuts, commands, and references** into one place. It helps developers **work faster**, **learn smarter**, and **save their favorite commands** with cloud sync and AI assistance.
+
+---
+
+## 🌟 Features
+
+### 📚 Centralized Developer Shortcuts
+
+* VS Code shortcuts
+* Git & GitHub commands
+* Linux commands
+* Clean, searchable UI
+
+### 🔍 Smart Local Search
+
+* Instant filtering
+* Category-based navigation
+* Fast and lightweight (JSON-based)
+
+### ⭐ Favorites System
+
+* Save frequently used shortcuts
+* User-specific favorites
+* Synced with Firebase Firestore
+
+### 🔐 Authentication
+
+* Google Sign-In (Firebase Auth)
+* Secure user sessions
+* Personalized experience
+
+### 🤖 AI Assistant (Gemini)
+
+* Ask questions about commands & shortcuts
+* Get explanations, suggestions, and workflows
+* Powered by **Google Gemini API**
+
+### 🎨 Modern UI
+
+* Built with **Next.js App Router**
+* Styled using **Tailwind CSS**
+* Responsive & mobile-friendly
+
+---
+
+## 🧠 Tech Stack
+
+| Layer      | Technology              |
+| ---------- | ----------------------- |
+| Frontend   | Next.js (App Router)    |
+| Styling    | Tailwind CSS            |
+| Data       | JSON Files              |
+| Auth       | Firebase Authentication |
+| Database   | Firebase Firestore      |
+| AI         | Google Gemini API       |
+| Deployment | Vercel                  |
+
+---
+
+## 📁 Project Folder Structure
+
+```
+devkeys/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx            # Home page
+│   │   ├── shortcuts/          # Shortcuts page
+│   │   ├── favorites/          # Favorites page
+│   │   ├── ai/                 # AI assistant page
+│   │   └── login/              # Login page
+│   │
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── SearchBar.tsx
+│   │   ├── CategoryTabs.tsx
+│   │   └── ShortcutCard.tsx
+│   │
+│   ├── data/
+│   │   ├── vscode.json
+│   │   ├── git.json
+│   │   └── linux.json
+│   │
+│   ├── lib/
+│   │   ├── firebase.ts
+│   │   └── gemini.ts
+│   │
+│   └── context/
+│       └── AuthContext.tsx
+│
+├── public/
+├── .env.local
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
+```
+
+⚠️ Never commit `.env.local` to GitHub.
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/devkeys.git
+cd devkeys
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open 👉 `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Firebase Setup
 
-## Learn More
+1. Create a Firebase project
+2. Enable:
 
-To learn more about Next.js, take a look at the following resources:
+   * Authentication → Google Sign-In
+   * Firestore Database
+3. Copy config values into `.env.local`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤖 Gemini AI Setup
 
-## Deploy on Vercel
+1. Visit **Google AI Studio**
+2. Generate Gemini API Key
+3. Add key to `.env.local`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Use Cases
+
+* Quickly recall Git commands
+* Learn VS Code productivity shortcuts
+* Save frequently used Linux commands
+* Ask AI for explanations and workflows
+* Build muscle memory for daily dev tasks
+
+---
+
+## 🔮 Future Enhancements
+
+* 🌙 Dark mode
+* 🧠 AI auto-suggestions while typing
+* 📱 PWA offline support
+* 🛠 Admin dashboard
+* 🧾 User command history
+
+---
+
+## 👨‍💻 Author
+
+**Rumesh Kumara**
+📌 Software Developer
+📌 Project: *DevKeys*
+
+---
+
+## ⭐ Support
+
+If you like this project, please ⭐ star the repository and share it with others!
+
+---
+
+If you want, next I can:
+
+* ✅ Add **screenshots section**
+* ✅ Write **GitHub project description**
+* ✅ Create **live demo link section**
+* ✅ Prepare **final portfolio explanation**
+
+Just tell me 👍
