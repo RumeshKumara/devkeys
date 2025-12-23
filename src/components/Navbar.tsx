@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <nav className=" bg-white">
-      <div className="max-w-full mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="max-w-full mx-auto px-4 h-16 flex items-center mt-2 justify-between">
         <Link href="/" className="font-bold text-3xl text-[#252525] flex items-center gap-3">
           <Image src="/logo.png" alt="DevKeys Logo" width={70} height={70} />
           Dev <span className="text-red-500 italic">Keys</span>
