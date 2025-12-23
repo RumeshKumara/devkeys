@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="max-w-full mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="font-bold text-3xl text-[#252525] flex items-center gap-3">
           <Image src="/logo.png" alt="DevKeys Logo" width={70} height={70} />
-          Dev <span className="text-[#cc1e1e] bg-red-300 p-4 rounded">Keys</span>
+          Dev <span className="text-red-500 italic">Keys</span>
         </Link>
 
         <div className="space-x-8 text-base font-medium text-gray-700">

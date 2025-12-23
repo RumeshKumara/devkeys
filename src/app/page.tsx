@@ -92,11 +92,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center mt-16 mb-12 px-4">
         <div className="mb-6">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Key className="w-16 h-16 text-red-500" />
-          </div>
+          
           <h1 className="text-6xl font-bold mb-4">
-            Dev <span className="text-red-500">Keys</span>
+            Dev <span className="text-red-500 italic">Keys</span>
           </h1>
           <p className="text-xl text-gray-600 italic">
             All Developer Shortcuts in One Place
@@ -105,48 +103,22 @@ export default function Home() {
       </section>
 
       {/* Thumbnail Grid */}
-      <section className="max-w-5xl mx-auto px-4 mb-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+      <section className="max-w-xl mx-auto px-4 mb-16">
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-6">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
-              <Link
-                key={category.id}
-                href={`/shortcuts?category=${category.id}`}
-                className={`${category.color} ${category.borderColor} border-2 rounded-2xl p-8 flex flex-col items-center justify-center transition-all duration-200 hover:scale-105 hover:shadow-lg`}
-              >
-                <IconComponent className={`w-16 h-16 mb-3 ${category.iconColor}`} />
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {category.name}
-                </h3>
+              <Link key={category.id} href={`/shortcuts?category=${category.id}`} className={`${category.color} ${category.borderColor} border rounded-2xl p-1.5 flex flex-col items-center justify-center transition-all duration-200 hover:scale-105 hover:shadow-lg aspect-square`}>
+                <IconComponent className={`w-10 h-10 mb-1.5 ${category.iconColor}`} />
+                <h3 className="text-sm font-semibold text-gray-800">{category.name}</h3>
               </Link>
             );
           })}
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="max-w-4xl mx-auto px-4 mb-16">
-        <div className="bg-gray-900 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold text-red-400 mb-8 tracking-wider">
-            FEATURES
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const FeatureIcon = feature.icon;
-              return (
-                <div key={index} className="flex flex-col items-center">
-                  <FeatureIcon className="w-12 h-12 mb-3 text-red-400" />
-                  <p className="text-white font-medium">{feature.text}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="text-center mb-16 px-4">
+      <section className="text-center px-4">
         <div className="flex justify-center gap-4 flex-wrap">
           <Link
             href="/shortcuts"
