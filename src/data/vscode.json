@@ -1,0 +1,182 @@
+[
+  {
+    "category": "General",
+    "items": [
+      {
+        "title": "Command Palette",
+        "command": "Ctrl+Shift+P",
+        "description": "Show all commands"
+      },
+      {
+        "title": "Quick Open File",
+        "command": "Ctrl+P",
+        "description": "Quickly open files"
+      },
+      {
+        "title": "Settings",
+        "command": "Ctrl+,",
+        "description": "Open settings"
+      },
+      {
+        "title": "Toggle Sidebar",
+        "command": "Ctrl+B",
+        "description": "Show/hide sidebar"
+      },
+      {
+        "title": "Toggle Terminal",
+        "command": "Ctrl+`",
+        "description": "Show/hide terminal"
+      }
+    ]
+  },
+  {
+    "category": "Editing",
+    "items": [
+      {
+        "title": "Find",
+        "command": "Ctrl+F",
+        "description": "Find in file"
+      },
+      {
+        "title": "Replace",
+        "command": "Ctrl+H",
+        "description": "Find and replace"
+      },
+      {
+        "title": "Find in Files",
+        "command": "Ctrl+Shift+F",
+        "description": "Search across files"
+      },
+      {
+        "title": "Comment Line",
+        "command": "Ctrl+/",
+        "description": "Toggle line comment"
+      },
+      {
+        "title": "Format Document",
+        "command": "Shift+Alt+F",
+        "description": "Format entire file"
+      },
+      {
+        "title": "Duplicate Line",
+        "command": "Shift+Alt+Down",
+        "description": "Copy line down"
+      },
+      {
+        "title": "Move Line Up",
+        "command": "Alt+Up",
+        "description": "Move line up"
+      },
+      {
+        "title": "Move Line Down",
+        "command": "Alt+Down",
+        "description": "Move line down"
+      }
+    ]
+  },
+  {
+    "category": "Navigation",
+    "items": [
+      {
+        "title": "Go to Definition",
+        "command": "F12",
+        "description": "Jump to definition"
+      },
+      {
+        "title": "Go to Line",
+        "command": "Ctrl+G",
+        "description": "Navigate to line number"
+      },
+      {
+        "title": "Go Back",
+        "command": "Alt+Left",
+        "description": "Navigate backward"
+      },
+      {
+        "title": "Go Forward",
+        "command": "Alt+Right",
+        "description": "Navigate forward"
+      },
+      {
+        "title": "Symbol Search",
+        "command": "Ctrl+Shift+O",
+        "description": "Go to symbol in file"
+      }
+    ]
+  },
+  {
+    "category": "Multi-Cursor",
+    "items": [
+      {
+        "title": "Add Cursor Above",
+        "command": "Ctrl+Alt+Up",
+        "description": "Add cursor to line above"
+      },
+      {
+        "title": "Add Cursor Below",
+        "command": "Ctrl+Alt+Down",
+        "description": "Add cursor to line below"
+      },
+      {
+        "title": "Select All Occurrences",
+        "command": "Ctrl+Shift+L",
+        "description": "Select all matching text"
+      },
+      {
+        "title": "Add Next Occurrence",
+        "command": "Ctrl+D",
+        "description": "Select next match"
+      }
+    ]
+  },
+  {
+    "category": "Debug",
+    "items": [
+      {
+        "title": "Start Debugging",
+        "command": "F5",
+        "description": "Start debug session"
+      },
+      {
+        "title": "Toggle Breakpoint",
+        "command": "F9",
+        "description": "Add/remove breakpoint"
+      },
+      {
+        "title": "Step Over",
+        "command": "F10",
+        "description": "Execute next line"
+      },
+      {
+        "title": "Step Into",
+        "command": "F11",
+        "description": "Step into function"
+      }
+    ]
+  },
+  {
+    "category": "Window Management",
+    "items": [
+      {
+        "title": "Split Editor",
+        "command": "Ctrl+\\",
+        "description": "Split editor window"
+      },
+      {
+        "title": "Close Editor",
+        "command": "Ctrl+W",
+        "description": "Close active editor"
+      },
+      {
+        "title": "New Window",
+        "command": "Ctrl+Shift+N",
+        "description": "Open new window"
+      },
+      {
+        "title": "Zen Mode",
+        "command": "Ctrl+K Z",
+        "description": "Enter zen mode"
+      }
+    ]
+  }
+]

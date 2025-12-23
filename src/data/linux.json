@@ -1,0 +1,117 @@
+[
+  {
+    "category": "File Management",
+    "items": [
+      {
+        "title": "List Files",
+        "command": "ls -la",
+        "description": "List all files with details"
+      },
+      {
+        "title": "Change Directory",
+        "command": "cd /path/to/directory",
+        "description": "Navigate to a directory"
+      },
+      {
+        "title": "Copy File",
+        "command": "cp source destination",
+        "description": "Copy files or directories"
+      },
+      {
+        "title": "Move/Rename",
+        "command": "mv source destination",
+        "description": "Move or rename files"
+      },
+      {
+        "title": "Delete File",
+        "command": "rm filename",
+        "description": "Remove files"
+      },
+      {
+        "title": "Create Directory",
+        "command": "mkdir directory_name",
+        "description": "Create a new directory"
+      }
+    ]
+  },
+  {
+    "category": "System Information",
+    "items": [
+      {
+        "title": "Disk Usage",
+        "command": "df -h",
+        "description": "Show disk space usage"
+      },
+      {
+        "title": "Memory Usage",
+        "command": "free -h",
+        "description": "Display memory usage"
+      },
+      {
+        "title": "System Processes",
+        "command": "top",
+        "description": "Display running processes"
+      },
+      {
+        "title": "Kernel Version",
+        "command": "uname -r",
+        "description": "Show kernel version"
+      }
+    ]
+  },
+  {
+    "category": "File Permissions",
+    "items": [
+      {
+        "title": "Change Permissions",
+        "command": "chmod 755 filename",
+        "description": "Modify file permissions"
+      },
+      {
+        "title": "Change Owner",
+        "command": "chown user:group filename",
+        "description": "Change file ownership"
+      }
+    ]
+  },
+  {
+    "category": "Text Processing",
+    "items": [
+      {
+        "title": "View File",
+        "command": "cat filename",
+        "description": "Display file contents"
+      },
+      {
+        "title": "Search in File",
+        "command": "grep 'pattern' filename",
+        "description": "Search for text patterns"
+      },
+      {
+        "title": "Find Files",
+        "command": "find /path -name filename",
+        "description": "Search for files"
+      }
+    ]
+  },
+  {
+    "category": "Network",
+    "items": [
+      {
+        "title": "Check Network",
+        "command": "ping hostname",
+        "description": "Test network connectivity"
+      },
+      {
+        "title": "Network Config",
+        "command": "ip addr show",
+        "description": "Display network interfaces"
+      },
+      {
+        "title": "Download File",
+        "command": "wget url",
+        "description": "Download files from web"
+      }
+    ]
+  }
+]
