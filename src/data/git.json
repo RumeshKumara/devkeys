@@ -1,0 +1,17 @@
+[
+  {
+    "category": "Git Basics",
+    "items": [
+      {
+        "title": "Check Status",
+        "command": "git status",
+        "description": "Show working tree status"
+      },
+      {
+        "title": "Commit Changes",
+        "command": "git commit -m \"message\"",
+        "description": "Save changes locally"
+      }
+    ]
+  }
+]
