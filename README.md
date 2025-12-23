@@ -1,7 +1,3 @@
-Here is a **professional, portfolio-ready `README.md`** for your project **DevKeys**.
-You can **copy–paste directly** into your GitHub repository.
-
----
 
 # 🚀 DevKeys
 
@@ -188,19 +184,5 @@ Open 👉 `http://localhost:3000`
 📌 Software Developer
 📌 Project: *DevKeys*
 
----
-
-## ⭐ Support
-
-If you like this project, please ⭐ star the repository and share it with others!
-
----
-
-If you want, next I can:
-
-* ✅ Add **screenshots section**
-* ✅ Write **GitHub project description**
-* ✅ Create **live demo link section**
-* ✅ Prepare **final portfolio explanation**
 
 Just tell me 👍
