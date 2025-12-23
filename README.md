@@ -3,7 +3,7 @@
 
 **DevKeys** is a modern, AI-powered web application that brings **developer shortcuts, commands, and references** into one place. It helps developers **work faster**, **learn smarter**, and **save their favorite commands** with cloud sync and AI assistance.
 
-![Alt Text]([relative/path/to/image.png](https://github.com/RumeshKumara/devkeys/blob/da8ae288087fea4e29b85482339ce2f71ce0a72e/Desktop%20-%201.png))
+![Alt Text](thumbnail.png)
 
 ---
 
