@@ -68,13 +68,13 @@ export default function Footer() {
                 href="https://github.com/RumeshKumara/devkeys"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-3 rounded-full hover:bg-red-500 transition"
+                className="bg-gray-800 p-3 rounded-xl hover:bg-red-500 transition"
               >
                 <Github size={20} />
               </a>
               <a
                 href="mailto:contact@devkeys.com"
-                className="bg-gray-800 p-3 rounded-full hover:bg-red-500 transition"
+                className="bg-gray-800 p-3 rounded-xl hover:bg-red-500 transition"
               >
                 <Mail size={20} />
               </a>
