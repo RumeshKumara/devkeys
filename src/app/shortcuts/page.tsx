@@ -69,24 +69,24 @@ export default function ShortcutsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+        <div className="mb-4 sm:mb-6 md:mb-8">
           <SearchBar onSearch={setQuery} />
         </div>
         
-        <div className="mb-8">
+        <div className="mb-4 sm:mb-6 md:mb-8">
           <CategoryTabs active={category} onChange={handleCategoryChange} />
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
           {data.map((section: any) => (
-            <div key={section.category} className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border-2 border-red-100 dark:border-red-900 shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-5 text-gray-800 dark:text-white border-b-2 border-red-200 dark:border-red-800 pb-3 flex items-center gap-2">
+            <div key={section.category} className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-red-100 dark:border-red-900 shadow-lg p-3 sm:p-4 md:p-6 hover:shadow-xl transition-all duration-300">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-5 text-gray-800 dark:text-white border-b-2 border-red-200 dark:border-red-800 pb-2 sm:pb-3 flex items-center gap-2">
                 <span className="w-2 h-8 bg-red-500 rounded-full"></span>
                 {section.category}
               </h2>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {section.items
                   .filter((item: any) =>
                     item.command
@@ -109,12 +109,12 @@ export default function ShortcutsPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-white dark:bg-gray-800 text-red-500 hover:bg-red-600 border border-red-500 dark:border-red-600 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 hover:text-white animate-bounce"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 bg-white dark:bg-gray-800 text-red-500 hover:bg-red-600 border border-red-500 dark:border-red-600 p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 hover:text-white animate-bounce"
           aria-label="Scroll to top"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

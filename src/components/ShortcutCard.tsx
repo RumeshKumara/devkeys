@@ -90,22 +90,22 @@ export default function ShortcutCard({
   };
 
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-white dark:bg-gray-800 flex justify-between items-start hover:border-red-300 dark:hover:border-red-500 hover:shadow-lg transition-all duration-300 group">
-      <div className="flex-1">
-        <h3 className="font-semibold text-gray-800 dark:text-gray-100 text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">{title}</h3>
-        <code className="block mt-2 text-sm bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-md font-mono border border-gray-200 dark:border-gray-700">
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 sm:p-4 md:p-5 bg-white dark:bg-gray-800 flex justify-between items-start hover:border-red-300 dark:hover:border-red-500 hover:shadow-lg transition-all duration-300 group">
+      <div className="flex-1 min-w-0">
+        <h3 className="font-semibold text-gray-800 dark:text-gray-100 text-base sm:text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">{title}</h3>
+        <code className="block mt-2 text-xs sm:text-sm bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md font-mono border border-gray-200 dark:border-gray-700 overflow-x-auto">
           {command}
         </code>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2 sm:mt-3 leading-relaxed">
           {description}
         </p>
       </div>
       <button 
         onClick={handleFavoriteClick}
-        className="ml-4 hover:scale-110 transition-all duration-300 flex-shrink-0 p-2 rounded-lg hover:bg-red-50 group/btn"
+        className="ml-2 sm:ml-4 hover:scale-110 transition-all duration-300 flex-shrink-0 p-1.5 sm:p-2 rounded-lg hover:bg-red-50 group/btn"
         title={!user ? "Login to save favorites" : isFavorite ? "Remove from favorites" : "Add to favorites"}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill={isFavorite ? "currentColor" : "none"} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className={`w-6 h-6 transition-colors duration-300 ${isFavorite ? "text-red-500" : "text-gray-400 group-hover/btn:text-red-500"}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill={isFavorite ? "currentColor" : "none"} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className={`w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-300 ${isFavorite ? "text-red-500" : "text-gray-400 group-hover/btn:text-red-500"}`}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
         </svg>
       </button>

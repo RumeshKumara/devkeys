@@ -8,14 +8,17 @@ import ThemeToggle from "./ThemeToggle";
 import { useAuth } from "@/context/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const { user } = useAuth();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,26 +34,34 @@ export default function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setShowDropdown(false);
       }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setShowMobileMenu(false);
+      }
     };
 
-    if (showDropdown) {
+    if (showDropdown || showMobileMenu) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showDropdown]);
+  }, [showDropdown, showMobileMenu]);
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
       localStorage.removeItem("isLoggedIn");
       setShowDropdown(false);
+      setShowMobileMenu(false);
       router.push("/");
     } catch (error) {
       console.error("Logout error:", error);
     }
+  };
+
+  const handleLinkClick = () => {
+    setShowMobileMenu(false);
   };
 
   return (
@@ -67,12 +78,15 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-full mx-auto px-4 h-16 flex items-center mt-2 justify-between">
-          <Link href="/" className="font-bold text-3xl text-[#252525] dark:text-white flex items-center gap-3">
-            <Image src="/logo.png" alt="DevKeys Logo" width={70} height={70} />
-            Dev <span className="text-red-500 italic -ml-2 bg-red-100 dark:bg-red-900/50 px-2 py-2 rounded-xl">Keys</span>
+          <Link href="/" className="font-bold text-xl sm:text-2xl md:text-3xl text-[#252525] dark:text-white flex items-center gap-2 sm:gap-3">
+            <Image src="/logo.png" alt="DevKeys Logo" width={50} height={50} className="sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px]" />
+            <span className="flex items-center">
+              Dev <span className="text-red-500 italic -ml-1 sm:-ml-2 bg-red-100 dark:bg-red-900/50 px-1.5 sm:px-2 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">Keys</span>
+            </span>
           </Link>
 
-          <div className="flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
             <div className="space-x-8 text-base font-medium text-gray-700 dark:text-gray-300">
               <Link href="/" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Home</Link>
               <Link href="/shortcuts" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/shortcuts' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Shortcuts</Link>
@@ -122,6 +136,100 @@ export default function Navbar() {
                 )}
               </div>
             )}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="p-2 text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-500 transition-all duration-300"
+              aria-label="Toggle menu"
+            >
+              <div className={`transition-transform duration-300 ${showMobileMenu ? 'rotate-90' : 'rotate-0'}`}>
+                {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            showMobileMenu ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div ref={mobileMenuRef} className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg">
+            <div className="px-4 py-3 space-y-2 animate-slideDown">
+              <Link 
+                href="/" 
+                onClick={handleLinkClick}
+                className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/shortcuts" 
+                onClick={handleLinkClick}
+                className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/shortcuts' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
+              >
+                Shortcuts
+              </Link>
+              <Link 
+                href="/ai" 
+                onClick={handleLinkClick}
+                className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/ai' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
+              >
+                AI
+              </Link>
+              <Link 
+                href="/favorites" 
+                onClick={handleLinkClick}
+                className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/favorites' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
+              >
+                Favorites
+              </Link>
+              
+              {user ? (
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
+                  <div className="px-4 py-2 flex items-center gap-3">
+                    {user.photoURL ? (
+                      <Image
+                        src={user.photoURL}
+                        alt={user.displayName || "User"}
+                        width={40}
+                        height={40}
+                        className="rounded-full border-2 border-red-500"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full border-2 border-red-500 bg-red-100 dark:bg-red-900 flex items-center justify-center">
+                        <span className="text-red-600 dark:text-red-300 font-bold text-lg">
+                          {user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase() || "U"}
+                        </span>
+                      </div>
+                    )}
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">{user.displayName}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{user.email}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full text-left px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors font-medium"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <Link 
+                  href="/login" 
+                  onClick={handleLinkClick}
+                  className="block mx-4 mt-2 text-center bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600 transition-colors font-medium"
+                >
+                  Login
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </nav>

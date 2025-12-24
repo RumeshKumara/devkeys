@@ -88,9 +88,9 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-t from-red-200 to-white dark:from-gray-800 dark:to-gray-900 relative">
-      {/* Left Side Decorations */}
-      <div className="hidden lg:block absolute left-4 top-1/4">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-t from-red-200 to-white dark:from-gray-800 dark:to-gray-900 relative">
+      {/* Left Side Decorations - Hidden on mobile and tablet */}
+      <div className="hidden xl:block absolute left-4 top-1/4">
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-red-200 dark:border-red-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-[float_3s_ease-in-out_infinite]">
             <Key className="w-8 h-8 text-red-500 mb-2" />
@@ -120,8 +120,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Right Side Decorations */}
-      <div className="hidden lg:block absolute right-4 top-1/4">
+      {/* Right Side Decorations - Hidden on mobile and tablet */}
+      <div className="hidden xl:block absolute right-4 top-1/4">
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-red-200 dark:border-red-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-[float_3s_ease-in-out_0.3s_infinite]">
             <Key className="w-8 h-8 text-red-500 mb-2" />
@@ -152,27 +152,27 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="text-center mt-8 mb-8 px-4">
-        <div className="mb-6">
+      <section className="text-center mt-6 sm:mt-8 mb-6 sm:mb-8 px-4">
+        <div className="mb-4 sm:mb-6">
           
-          <h1 className="text-6xl font-bold mb-8 text-gray-900 dark:text-white">
-            Dev <span className="text-red-500 italic -ml-2 bg-red-100 dark:bg-red-900/50 px-4 py-2 rounded-2xl">Keys</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 text-gray-900 dark:text-white">
+            Dev <span className="text-red-500 italic -ml-1 sm:-ml-2 bg-red-100 dark:bg-red-900/50 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl">Keys</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 italic">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 italic">
             All Developer Shortcuts in One Place
           </p>
         </div>
       </section>
 
       {/* Thumbnail Grid */}
-      <section className="max-w-xl mx-auto px-4 mb-12">
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-6">
+      <section className="max-w-xl mx-auto px-4 mb-8 sm:mb-10 md:mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
-              <Link key={category.id} href={`/shortcuts?category=${category.id}`} className={`${category.color} dark:bg-gray-800 dark:hover:bg-gray-700 ${category.borderColor} dark:border-red-800 border rounded-2xl p-1.5 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-y-2 hover:border-red-400 dark:hover:border-red-500 aspect-square group`}>
-                <IconComponent className={`w-10 h-10 mb-1.5 ${category.iconColor} transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12`} />
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">{category.name}</h3>
+              <Link key={category.id} href={`/shortcuts?category=${category.id}`} className={`${category.color} dark:bg-gray-800 dark:hover:bg-gray-700 ${category.borderColor} dark:border-red-800 border rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-1.5 flex flex-col items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-y-2 hover:border-red-400 dark:hover:border-red-500 aspect-square group`}>
+                <IconComponent className={`w-8 h-8 sm:w-10 sm:h-10 mb-1 sm:mb-1.5 ${category.iconColor} transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12`} />
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200 text-center">{category.name}</h3>
               </Link>
             );
           })}
@@ -180,24 +180,24 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="text-center px-4">
-        <div className="flex justify-center gap-4 flex-wrap">
+      <section className="text-center px-4 pb-8">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 flex-wrap">
           <Link
             href="/shortcuts"
-            className="bg-red-500 text-white px-8 py-3 rounded-full hover:bg-red-600 hover:scale-105 hover:shadow-xl transition-all duration-300 font-medium"
+            className="bg-red-500 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-red-600 hover:scale-105 hover:shadow-xl transition-all duration-300 font-medium text-sm sm:text-base"
           >
             Explore All Shortcuts
           </Link>
           <Link
             href="/ai"
-            className="border-2 border-red-500 dark:border-red-600 px-8 py-3 rounded-full text-red-500 dark:text-red-400 hover:bg-red-500 hover:scale-105 hover:shadow-xl hover:text-white transition-all duration-300 font-medium flex items-center gap-2"
+            className="border-2 border-red-500 dark:border-red-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-red-500 dark:text-red-400 hover:bg-red-500 hover:scale-105 hover:shadow-xl hover:text-white transition-all duration-300 font-medium text-sm sm:text-base flex items-center justify-center gap-2"
           >
-            <Sparkles className="w-5 h-5" />
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             Ask AI a Question
           </Link>
           <Link
             href="/favorites"
-            className="border-2 border-red-500 dark:border-red-600 text-red-500 dark:text-red-400 px-8 py-3 rounded-full hover:bg-red-500 hover:scale-105 hover:shadow-xl hover:text-white transition-all duration-300 font-medium"
+            className="border-2 border-red-500 dark:border-red-600 text-red-500 dark:text-red-400 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-red-500 hover:scale-105 hover:shadow-xl hover:text-white transition-all duration-300 font-medium text-sm sm:text-base"
           >
             View Favorites
           </Link>
