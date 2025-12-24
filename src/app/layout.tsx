@@ -52,7 +52,7 @@ export default function RootLayout({
         />
         <AuthProvider>
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 page-transition">
             {children}
           </main>
           <Footer />

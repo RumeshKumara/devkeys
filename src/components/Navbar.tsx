@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
+import SmoothLink from "./SmoothLink";
 import { useAuth } from "@/context/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
@@ -81,19 +82,19 @@ export default function Navbar() {
           <Link href="/" className="font-bold text-xl sm:text-2xl md:text-3xl text-[#252525] dark:text-white flex items-center gap-2 sm:gap-3">
             <Image src="/logo.png" alt="DevKeys Logo" width={50} height={50} className="sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px]" />
             <span className="flex items-center">
-              Dev <span className="text-red-500 italic -ml-1 sm:-ml-2 bg-red-100 dark:bg-red-900/50 px-1.5 sm:px-2 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">Keys</span>
+              Dev <span className="text-red-500 italic -ml-1 sm:ml-1 bg-red-100 dark:bg-red-900/50 px-1.5 sm:px-2 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">Keys</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             <div className="space-x-8 text-base font-medium text-gray-700 dark:text-gray-300">
-              <Link href="/" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Home</Link>
-              <Link href="/shortcuts" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/shortcuts' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Shortcuts</Link>
-              <Link href="/ai" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/ai' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>AI</Link>
-              <Link href="/favorites" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/favorites' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Favorites</Link>
+              <SmoothLink href="/" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Home</SmoothLink>
+              <SmoothLink href="/shortcuts" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/shortcuts' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Shortcuts</SmoothLink>
+              <SmoothLink href="/ai" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/ai' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>AI</SmoothLink>
+              <SmoothLink href="/favorites" className={`hover:text-red-500 hover:scale-110 transition-all duration-500 ease-in-out inline-block ${pathname === '/favorites' ? 'text-red-500 underline underline-offset-4 scale-105' : ''}`}>Favorites</SmoothLink>
               {!user && (
-                <Link href="/login" className="transition-all duration-300 bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600 hover:scale-105 hover:shadow-lg">Login</Link>
+                <SmoothLink href="/login" className="transition-all duration-300 bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600 hover:scale-105 hover:shadow-lg">Login</SmoothLink>
               )}
             </div>
             <ThemeToggle />
@@ -161,34 +162,34 @@ export default function Navbar() {
         >
           <div ref={mobileMenuRef} className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg">
             <div className="px-4 py-3 space-y-2 animate-slideDown">
-              <Link 
+              <SmoothLink 
                 href="/" 
                 onClick={handleLinkClick}
                 className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
               >
                 Home
-              </Link>
-              <Link 
+              </SmoothLink>
+              <SmoothLink 
                 href="/shortcuts" 
                 onClick={handleLinkClick}
                 className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/shortcuts' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
               >
                 Shortcuts
-              </Link>
-              <Link 
+              </SmoothLink>
+              <SmoothLink 
                 href="/ai" 
                 onClick={handleLinkClick}
                 className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/ai' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
               >
                 AI
-              </Link>
-              <Link 
+              </SmoothLink>
+              <SmoothLink 
                 href="/favorites" 
                 onClick={handleLinkClick}
                 className={`block px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors ${pathname === '/favorites' ? 'bg-red-50 dark:bg-red-900/20 text-red-500 font-medium' : ''}`}
               >
                 Favorites
-              </Link>
+              </SmoothLink>
               
               {user ? (
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
@@ -221,13 +222,13 @@ export default function Navbar() {
                   </button>
                 </div>
               ) : (
-                <Link 
+                <SmoothLink 
                   href="/login" 
                   onClick={handleLinkClick}
                   className="block mx-4 mt-2 text-center bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600 transition-colors font-medium"
                 >
                   Login
-                </Link>
+                </SmoothLink>
               )}
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Github, Heart, Mail } from "lucide-react";
+import SmoothLink from "./SmoothLink";
 
 export default function Footer() {
   return (
@@ -24,38 +25,33 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-2 text-gray-400 dark:text-gray-500 text-sm">
               <li>
-                <Link 
+                <SmoothLink 
                   href="/" 
                   className="hover:text-red-500 transition"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    setTimeout(() => window.location.href = '/', 500);
-                  }}
                 >
                   Home
-                </Link>
+                </SmoothLink>
               </li>
               <li>
-                <Link
+                <SmoothLink
                   href="/shortcuts"
                   className="hover:text-red-500 transition"
                 >
                   All Shortcuts
-                </Link>
+                </SmoothLink>
               </li>
               <li>
-                <Link
+                <SmoothLink
                   href="/favorites"
                   className="hover:text-red-500 transition"
                 >
                   Favorites
-                </Link>
+                </SmoothLink>
               </li>
               <li>
-                <Link href="/ai" className="hover:text-red-500 transition">
+                <SmoothLink href="/ai" className="hover:text-red-500 transition">
                   AI Assistant
-                </Link>
+                </SmoothLink>
               </li>
             </ul>
           </div>
