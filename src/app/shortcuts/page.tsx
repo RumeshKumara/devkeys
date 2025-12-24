@@ -51,34 +51,42 @@ export default function ShortcutsPage() {
       })) || [];
 
   return (
-    <>
-      <SearchBar onSearch={setQuery} />
-      <CategoryTabs active={category} onChange={handleCategoryChange} />
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <SearchBar onSearch={setQuery} />
+        </div>
+        
+        <div className="mb-8">
+          <CategoryTabs active={category} onChange={handleCategoryChange} />
+        </div>
 
-      <div className="space-y-6">
-        {data.map((section: any) => (
-          <div key={section.category}>
-            <h2 className="font-bold mb-3">
-              {section.category}
-            </h2>
+        <div className="space-y-8">
+          {data.map((section: any) => (
+            <div key={section.category} className="bg-white/60 backdrop-blur-sm rounded-2xl border-2 border-red-100 shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+              <h2 className="text-2xl font-bold mb-5 text-gray-800 border-b-2 border-red-200 pb-3 flex items-center gap-2">
+                <span className="w-2 h-8 bg-red-500 rounded-full"></span>
+                {section.category}
+              </h2>
 
-            <div className="space-y-3">
-              {section.items
-                .filter((item: any) =>
-                  item.command
-                    .toLowerCase()
-                    .includes(query.toLowerCase())
-                )
-                .map((item: any) => (
-                  <ShortcutCard
-                    key={item.command}
-                    {...item}
-                  />
-                ))}
+              <div className="space-y-4">
+                {section.items
+                  .filter((item: any) =>
+                    item.command
+                      .toLowerCase()
+                      .includes(query.toLowerCase())
+                  )
+                  .map((item: any) => (
+                    <ShortcutCard
+                      key={item.command}
+                      {...item}
+                    />
+                  ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
