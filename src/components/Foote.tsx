@@ -11,7 +11,7 @@ export default function Footer() {
           {/* About Section */}
           <div>
             <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-              <span className="text-red-500">Dev</span>Keys
+              Dev <span className="text-red-500 italic -ml-1 bg-gray-800 px-2 py-2 rounded-xl">Keys</span>
             </h3>
             <p className="text-gray-400 text-sm">
               All developer shortcuts and commands in one place. Your ultimate
