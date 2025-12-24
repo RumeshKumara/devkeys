@@ -11,6 +11,7 @@ export default function Navbar() {
         </Link>
 
         <div className="space-x-8 text-base font-medium text-gray-700">
+          <Link href="/" className="hover:text-red-500 hover:scale-110 transition-all duration-300 inline-block">Home</Link>
           <Link href="/shortcuts" className="hover:text-red-500 hover:scale-110 transition-all duration-300 inline-block">Shortcuts</Link>
           <Link href="/ai" className="hover:text-red-500 hover:scale-110 transition-all duration-300 inline-block">AI</Link>
           <Link href="/favorites" className="hover:text-red-500 hover:scale-110 transition-all duration-300 inline-block">Favorites</Link>
