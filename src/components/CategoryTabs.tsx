@@ -7,15 +7,15 @@ const categories = ["vscode", "git", "linux", "mysql", "maven", "npm", "awscli",
 
 export default function CategoryTabs({ active, onChange }: Props) {
   return (
-    <div className="flex gap-3 mb-6">
+    <div className="flex gap-3 mb-6 flex-wrap">
       {categories.map((cat) => (
         <button
           key={cat}
           onClick={() => onChange(cat)}
-          className={`px-4 py-2 rounded border ${
+          className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 ease-in-out ${
             active === cat
-              ? "bg-black text-white"
-              : "bg-white"
+              ? "bg-red-500 text-white shadow-lg scale-105 hover:bg-red-600"
+              : "bg-white text-gray-700 border border-gray-200 hover:border-red-300 hover:text-red-500 hover:scale-105 hover:shadow-md"
           }`}
         >
           {cat.toUpperCase()}
