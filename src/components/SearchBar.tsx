@@ -7,7 +7,7 @@ export default function SearchBar({ onSearch }: Props) {
     <div className="relative mb-4">
       <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
         <svg
-          className="w-5 h-5 text-gray-400"
+          className="w-5 h-5 text-gray-400 dark:text-gray-500"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -24,7 +24,7 @@ export default function SearchBar({ onSearch }: Props) {
       <input
         type="text"
         placeholder="Search shortcuts..."
-        className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-all duration-300 hover:border-red-300"
+        className="w-full pl-12 pr-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-all duration-300 hover:border-red-300 dark:hover:border-red-600"
         onChange={(e) => onSearch(e.target.value)}
       />
     </div>

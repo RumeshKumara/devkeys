@@ -68,7 +68,7 @@ export default function ShortcutsPage() {
       })) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <SearchBar onSearch={setQuery} />
@@ -80,8 +80,8 @@ export default function ShortcutsPage() {
 
         <div className="space-y-8">
           {data.map((section: any) => (
-            <div key={section.category} className="bg-white/60 backdrop-blur-sm rounded-2xl border-2 border-red-100 shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-5 text-gray-800 border-b-2 border-red-200 pb-3 flex items-center gap-2">
+            <div key={section.category} className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border-2 border-red-100 dark:border-red-900 shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+              <h2 className="text-2xl font-bold mb-5 text-gray-800 dark:text-white border-b-2 border-red-200 dark:border-red-800 pb-3 flex items-center gap-2">
                 <span className="w-2 h-8 bg-red-500 rounded-full"></span>
                 {section.category}
               </h2>
@@ -108,7 +108,7 @@ export default function ShortcutsPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-white text-red-500 hover:bg-red-600 border border-red-500 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 hover:text-white"
+          className="fixed bottom-8 right-8 bg-white dark:bg-gray-800 text-red-500 hover:bg-red-600 border border-red-500 dark:border-red-600 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 hover:text-white"
           aria-label="Scroll to top"
         >
           <svg

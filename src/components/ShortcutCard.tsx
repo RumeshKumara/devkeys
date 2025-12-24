@@ -60,13 +60,13 @@ export default function ShortcutCard({
   };
 
   return (
-    <div className="border border-gray-200 rounded-lg p-5 bg-white flex justify-between items-start hover:border-red-300 hover:shadow-lg transition-all duration-300 group">
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-white dark:bg-gray-800 flex justify-between items-start hover:border-red-300 dark:hover:border-red-500 hover:shadow-lg transition-all duration-300 group">
       <div className="flex-1">
-        <h3 className="font-semibold text-gray-800 text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">{title}</h3>
-        <code className="block mt-2 text-sm bg-gray-100 text-gray-700 px-3 py-2 rounded-md font-mono border border-gray-200">
+        <h3 className="font-semibold text-gray-800 dark:text-gray-100 text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">{title}</h3>
+        <code className="block mt-2 text-sm bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-md font-mono border border-gray-200 dark:border-gray-700">
           {command}
         </code>
-        <p className="text-sm text-gray-600 mt-3 leading-relaxed">
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">
           {description}
         </p>
       </div>
