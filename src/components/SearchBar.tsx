@@ -24,7 +24,7 @@ export default function SearchBar({ onSearch }: Props) {
       <input
         type="text"
         placeholder="Search shortcuts..."
-        className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 hover:border-red-300"
+        className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-all duration-300 hover:border-red-300"
         onChange={(e) => onSearch(e.target.value)}
       />
     </div>
