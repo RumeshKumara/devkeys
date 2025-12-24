@@ -1,14 +1,29 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "@/lib/firebase";
+import { useState } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
-    // Simulate login (in real app, this would be actual Google OAuth)
-    localStorage.setItem("isLoggedIn", "true");
-    router.push("/");
+  const handleLogin = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await signInWithPopup(auth, provider);
+      // User is signed in
+      console.log("Logged in user:", result.user);
+      localStorage.setItem("isLoggedIn", "true");
+      router.push("/");
+    } catch (error: any) {
+      console.error("Login error:", error);
+      setError(error.message || "Failed to sign in with Google");
+      setLoading(false);
+    }
   };
 
   return (
@@ -21,9 +36,16 @@ export default function LoginPage() {
           Access your favorite shortcuts and AI assistant
         </p>
 
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
         <button 
           onClick={handleLogin}
-          className="w-full bg-white dark:bg-gray-700 border border-red-300 dark:border-red-700 text-gray-800 dark:text-white py-3 px-4 rounded-full hover:bg-red-600 hover:text-white hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium flex items-center justify-center gap-2"
+          disabled={loading}
+          className="w-full bg-white dark:bg-gray-700 border border-red-300 dark:border-red-700 text-gray-800 dark:text-white py-3 px-4 rounded-full hover:bg-red-600 hover:text-white hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -31,7 +53,7 @@ export default function LoginPage() {
             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
             <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
           </svg>
-          Continue with Google
+          {loading ? "Signing in..." : "Continue with Google"}
         </button>
 
         <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
