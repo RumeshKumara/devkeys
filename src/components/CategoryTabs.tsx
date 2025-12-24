@@ -3,7 +3,7 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-const categories = ["vscode", "git", "linux"];
+const categories = ["vscode", "git", "linux", "mysql", "maven", "npm", "awscli", "windows"];
 
 export default function CategoryTabs({ active, onChange }: Props) {
   return (
