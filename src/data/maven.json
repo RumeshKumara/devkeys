@@ -1,0 +1,490 @@
+{
+  "categories": [
+    {
+      "name": "Build Lifecycle",
+      "shortcuts": [
+        {
+          "command": "mvn clean",
+          "description": "Clean the project (delete target directory)"
+        },
+        {
+          "command": "mvn compile",
+          "description": "Compile source code"
+        },
+        {
+          "command": "mvn test",
+          "description": "Run unit tests"
+        },
+        {
+          "command": "mvn package",
+          "description": "Package compiled code (JAR/WAR)"
+        },
+        {
+          "command": "mvn install",
+          "description": "Install package to local repository"
+        },
+        {
+          "command": "mvn deploy",
+          "description": "Deploy to remote repository"
+        },
+        {
+          "command": "mvn verify",
+          "description": "Run integration tests"
+        },
+        {
+          "command": "mvn validate",
+          "description": "Validate project structure"
+        }
+      ]
+    },
+    {
+      "name": "Common Commands",
+      "shortcuts": [
+        {
+          "command": "mvn clean install",
+          "description": "Clean and install project"
+        },
+        {
+          "command": "mvn clean package",
+          "description": "Clean and package project"
+        },
+        {
+          "command": "mvn clean test",
+          "description": "Clean and run tests"
+        },
+        {
+          "command": "mvn clean compile",
+          "description": "Clean and compile project"
+        },
+        {
+          "command": "mvn clean install -DskipTests",
+          "description": "Install without running tests"
+        },
+        {
+          "command": "mvn clean package -DskipTests",
+          "description": "Package without running tests"
+        }
+      ]
+    },
+    {
+      "name": "Dependency Management",
+      "shortcuts": [
+        {
+          "command": "mvn dependency:tree",
+          "description": "Display dependency tree"
+        },
+        {
+          "command": "mvn dependency:list",
+          "description": "List all dependencies"
+        },
+        {
+          "command": "mvn dependency:analyze",
+          "description": "Analyze dependencies"
+        },
+        {
+          "command": "mvn dependency:resolve",
+          "description": "Resolve all dependencies"
+        },
+        {
+          "command": "mvn dependency:copy-dependencies",
+          "description": "Copy dependencies to target folder"
+        },
+        {
+          "command": "mvn dependency:purge-local-repository",
+          "description": "Clear local repository cache"
+        },
+        {
+          "command": "mvn versions:display-dependency-updates",
+          "description": "Show available dependency updates"
+        },
+        {
+          "command": "mvn versions:display-plugin-updates",
+          "description": "Show available plugin updates"
+        }
+      ]
+    },
+    {
+      "name": "Project Creation",
+      "shortcuts": [
+        {
+          "command": "mvn archetype:generate",
+          "description": "Create new project from archetype"
+        },
+        {
+          "command": "mvn archetype:generate -DgroupId=com.example -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false",
+          "description": "Create Java project quickly"
+        },
+        {
+          "command": "mvn archetype:generate -DgroupId=com.example -DartifactId=webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false",
+          "description": "Create web application project"
+        }
+      ]
+    },
+    {
+      "name": "Testing",
+      "shortcuts": [
+        {
+          "command": "mvn test",
+          "description": "Run all unit tests"
+        },
+        {
+          "command": "mvn test -Dtest=TestClassName",
+          "description": "Run specific test class"
+        },
+        {
+          "command": "mvn test -Dtest=TestClassName#testMethod",
+          "description": "Run specific test method"
+        },
+        {
+          "command": "mvn test -Dtest=Test*",
+          "description": "Run tests matching pattern"
+        },
+        {
+          "command": "mvn integration-test",
+          "description": "Run integration tests"
+        },
+        {
+          "command": "mvn surefire-report:report",
+          "description": "Generate test report"
+        },
+        {
+          "command": "mvn test -DfailIfNoTests=false",
+          "description": "Run tests without failing if none exist"
+        }
+      ]
+    },
+    {
+      "name": "Running Applications",
+      "shortcuts": [
+        {
+          "command": "mvn spring-boot:run",
+          "description": "Run Spring Boot application"
+        },
+        {
+          "command": "mvn exec:java",
+          "description": "Execute Java main class"
+        },
+        {
+          "command": "mvn exec:java -Dexec.mainClass=\"com.example.Main\"",
+          "description": "Execute specific main class"
+        },
+        {
+          "command": "mvn tomcat7:run",
+          "description": "Run with Tomcat 7"
+        },
+        {
+          "command": "mvn jetty:run",
+          "description": "Run with Jetty server"
+        }
+      ]
+    },
+    {
+      "name": "Clean & Build Options",
+      "shortcuts": [
+        {
+          "command": "mvn clean",
+          "description": "Remove target directory"
+        },
+        {
+          "command": "mvn clean install -U",
+          "description": "Force update snapshots"
+        },
+        {
+          "command": "mvn clean install -o",
+          "description": "Build in offline mode"
+        },
+        {
+          "command": "mvn clean install -X",
+          "description": "Debug mode with detailed output"
+        },
+        {
+          "command": "mvn clean install -e",
+          "description": "Show error stack traces"
+        },
+        {
+          "command": "mvn clean install -T 4",
+          "description": "Build with 4 threads (parallel)"
+        },
+        {
+          "command": "mvn clean install -T 1C",
+          "description": "Build with 1 thread per CPU core"
+        }
+      ]
+    },
+    {
+      "name": "Plugin Management",
+      "shortcuts": [
+        {
+          "command": "mvn help:describe -Dplugin=pluginName",
+          "description": "Get plugin information"
+        },
+        {
+          "command": "mvn help:effective-pom",
+          "description": "Display effective POM"
+        },
+        {
+          "command": "mvn help:effective-settings",
+          "description": "Display effective settings"
+        },
+        {
+          "command": "mvn versions:display-plugin-updates",
+          "description": "Show plugin updates"
+        },
+        {
+          "command": "mvn versions:use-latest-versions",
+          "description": "Update to latest versions"
+        }
+      ]
+    },
+    {
+      "name": "Code Quality",
+      "shortcuts": [
+        {
+          "command": "mvn checkstyle:check",
+          "description": "Run Checkstyle validation"
+        },
+        {
+          "command": "mvn pmd:check",
+          "description": "Run PMD code analysis"
+        },
+        {
+          "command": "mvn spotbugs:check",
+          "description": "Run SpotBugs analysis"
+        },
+        {
+          "command": "mvn sonar:sonar",
+          "description": "Run SonarQube analysis"
+        },
+        {
+          "command": "mvn jacoco:report",
+          "description": "Generate code coverage report"
+        },
+        {
+          "command": "mvn site",
+          "description": "Generate project documentation site"
+        }
+      ]
+    },
+    {
+      "name": "Release Management",
+      "shortcuts": [
+        {
+          "command": "mvn release:prepare",
+          "description": "Prepare project release"
+        },
+        {
+          "command": "mvn release:perform",
+          "description": "Perform project release"
+        },
+        {
+          "command": "mvn release:clean",
+          "description": "Clean release preparation"
+        },
+        {
+          "command": "mvn release:rollback",
+          "description": "Rollback release preparation"
+        },
+        {
+          "command": "mvn versions:set -DnewVersion=1.2.3",
+          "description": "Set project version"
+        }
+      ]
+    },
+    {
+      "name": "Repository Management",
+      "shortcuts": [
+        {
+          "command": "mvn install:install-file -Dfile=path/to/jar -DgroupId=com.example -DartifactId=mylib -Dversion=1.0 -Dpackaging=jar",
+          "description": "Install JAR to local repository"
+        },
+        {
+          "command": "mvn dependency:get -Dartifact=groupId:artifactId:version",
+          "description": "Download specific artifact"
+        },
+        {
+          "command": "mvn dependency:purge-local-repository",
+          "description": "Purge local repository"
+        },
+        {
+          "command": "mvn dependency:resolve-plugins",
+          "description": "Resolve all plugin dependencies"
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "shortcuts": [
+        {
+          "command": "mvn javadoc:javadoc",
+          "description": "Generate Javadoc"
+        },
+        {
+          "command": "mvn javadoc:jar",
+          "description": "Create Javadoc JAR"
+        },
+        {
+          "command": "mvn site",
+          "description": "Generate project site"
+        },
+        {
+          "command": "mvn site:run",
+          "description": "Run site locally"
+        },
+        {
+          "command": "mvn project-info-reports:dependencies",
+          "description": "Generate dependency report"
+        }
+      ]
+    },
+    {
+      "name": "WAR/JAR Operations",
+      "shortcuts": [
+        {
+          "command": "mvn war:war",
+          "description": "Create WAR file"
+        },
+        {
+          "command": "mvn jar:jar",
+          "description": "Create JAR file"
+        },
+        {
+          "command": "mvn source:jar",
+          "description": "Create source JAR"
+        },
+        {
+          "command": "mvn assembly:single",
+          "description": "Create assembly (e.g., with dependencies)"
+        },
+        {
+          "command": "mvn shade:shade",
+          "description": "Create uber/fat JAR"
+        }
+      ]
+    },
+    {
+      "name": "Multi-Module Projects",
+      "shortcuts": [
+        {
+          "command": "mvn clean install -pl module1,module2",
+          "description": "Build specific modules"
+        },
+        {
+          "command": "mvn clean install -am -pl module1",
+          "description": "Build module and its dependencies"
+        },
+        {
+          "command": "mvn clean install -amd -pl module1",
+          "description": "Build module and dependents"
+        },
+        {
+          "command": "mvn clean install -rf :module1",
+          "description": "Resume build from specific module"
+        },
+        {
+          "command": "mvn clean install -N",
+          "description": "Build only parent POM"
+        }
+      ]
+    },
+    {
+      "name": "Troubleshooting",
+      "shortcuts": [
+        {
+          "command": "mvn -X",
+          "description": "Debug mode (verbose output)"
+        },
+        {
+          "command": "mvn -e",
+          "description": "Show error stack traces"
+        },
+        {
+          "command": "mvn -U",
+          "description": "Force update of snapshots"
+        },
+        {
+          "command": "mvn -v",
+          "description": "Display Maven version"
+        },
+        {
+          "command": "mvn help:system",
+          "description": "Display system properties"
+        },
+        {
+          "command": "mvn dependency:build-classpath",
+          "description": "Display classpath"
+        },
+        {
+          "command": "mvn validate",
+          "description": "Validate project configuration"
+        }
+      ]
+    },
+    {
+      "name": "Profile Management",
+      "shortcuts": [
+        {
+          "command": "mvn clean install -P profile1",
+          "description": "Build with specific profile"
+        },
+        {
+          "command": "mvn clean install -P profile1,profile2",
+          "description": "Build with multiple profiles"
+        },
+        {
+          "command": "mvn help:active-profiles",
+          "description": "Show active profiles"
+        },
+        {
+          "command": "mvn help:all-profiles",
+          "description": "Show all available profiles"
+        }
+      ]
+    },
+    {
+      "name": "Property Management",
+      "shortcuts": [
+        {
+          "command": "mvn clean install -DpropertyName=value",
+          "description": "Set property from command line"
+        },
+        {
+          "command": "mvn help:evaluate -Dexpression=project.version",
+          "description": "Evaluate Maven expression"
+        },
+        {
+          "command": "mvn help:evaluate -Dexpression=project.version -q -DforceStdout",
+          "description": "Get project version only"
+        },
+        {
+          "command": "mvn clean install -Dmaven.test.skip=true",
+          "description": "Skip test compilation and execution"
+        }
+      ]
+    },
+    {
+      "name": "Spring Boot Specific",
+      "shortcuts": [
+        {
+          "command": "mvn spring-boot:run",
+          "description": "Run Spring Boot application"
+        },
+        {
+          "command": "mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8081",
+          "description": "Run with custom arguments"
+        },
+        {
+          "command": "mvn spring-boot:run -Dspring-boot.run.profiles=dev",
+          "description": "Run with specific profile"
+        },
+        {
+          "command": "mvn spring-boot:build-image",
+          "description": "Build Docker image"
+        },
+        {
+          "command": "mvn spring-boot:repackage",
+          "description": "Repackage as executable JAR"
+        }
+      ]
+    }
+  ]
+}

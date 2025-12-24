@@ -1,0 +1,808 @@
+{
+  "categories": [
+    {
+      "name": "General Shortcuts",
+      "shortcuts": [
+        {
+          "command": "Ctrl + C",
+          "description": "Copy selected item"
+        },
+        {
+          "command": "Ctrl + X",
+          "description": "Cut selected item"
+        },
+        {
+          "command": "Ctrl + V",
+          "description": "Paste copied/cut item"
+        },
+        {
+          "command": "Ctrl + Z",
+          "description": "Undo an action"
+        },
+        {
+          "command": "Ctrl + Y",
+          "description": "Redo an action"
+        },
+        {
+          "command": "Ctrl + A",
+          "description": "Select all items"
+        },
+        {
+          "command": "Ctrl + F",
+          "description": "Find/Search"
+        },
+        {
+          "command": "Ctrl + S",
+          "description": "Save current file"
+        },
+        {
+          "command": "Ctrl + P",
+          "description": "Print current document"
+        },
+        {
+          "command": "Ctrl + N",
+          "description": "Open new window/file"
+        },
+        {
+          "command": "Ctrl + W",
+          "description": "Close current window"
+        },
+        {
+          "command": "Alt + F4",
+          "description": "Close active application"
+        },
+        {
+          "command": "F2",
+          "description": "Rename selected item"
+        },
+        {
+          "command": "F5",
+          "description": "Refresh active window"
+        },
+        {
+          "command": "Delete",
+          "description": "Delete selected item"
+        },
+        {
+          "command": "Shift + Delete",
+          "description": "Permanently delete (skip Recycle Bin)"
+        }
+      ]
+    },
+    {
+      "name": "Windows Key Shortcuts",
+      "shortcuts": [
+        {
+          "command": "Win",
+          "description": "Open/Close Start Menu"
+        },
+        {
+          "command": "Win + D",
+          "description": "Show/Hide Desktop"
+        },
+        {
+          "command": "Win + E",
+          "description": "Open File Explorer"
+        },
+        {
+          "command": "Win + I",
+          "description": "Open Settings"
+        },
+        {
+          "command": "Win + L",
+          "description": "Lock computer"
+        },
+        {
+          "command": "Win + R",
+          "description": "Open Run dialog"
+        },
+        {
+          "command": "Win + S",
+          "description": "Open Search"
+        },
+        {
+          "command": "Win + A",
+          "description": "Open Action Center"
+        },
+        {
+          "command": "Win + X",
+          "description": "Open Quick Link menu"
+        },
+        {
+          "command": "Win + Tab",
+          "description": "Open Task View"
+        },
+        {
+          "command": "Win + M",
+          "description": "Minimize all windows"
+        },
+        {
+          "command": "Win + Shift + M",
+          "description": "Restore minimized windows"
+        },
+        {
+          "command": "Win + Home",
+          "description": "Minimize all except active window"
+        },
+        {
+          "command": "Win + Break",
+          "description": "Open System Properties"
+        },
+        {
+          "command": "Win + PrtSc",
+          "description": "Take screenshot and save to Pictures"
+        },
+        {
+          "command": "Win + Shift + S",
+          "description": "Open Snipping Tool (Screenshot)"
+        },
+        {
+          "command": "Win + V",
+          "description": "Open Clipboard history"
+        },
+        {
+          "command": "Win + Period (.)",
+          "description": "Open Emoji panel"
+        },
+        {
+          "command": "Win + Semicolon (;)",
+          "description": "Open Emoji panel (alternative)"
+        },
+        {
+          "command": "Win + Plus (+)",
+          "description": "Open Magnifier (zoom in)"
+        },
+        {
+          "command": "Win + Minus (-)",
+          "description": "Zoom out in Magnifier"
+        },
+        {
+          "command": "Win + Esc",
+          "description": "Close Magnifier"
+        }
+      ]
+    },
+    {
+      "name": "Window Management",
+      "shortcuts": [
+        {
+          "command": "Win + Left Arrow",
+          "description": "Snap window to left half"
+        },
+        {
+          "command": "Win + Right Arrow",
+          "description": "Snap window to right half"
+        },
+        {
+          "command": "Win + Up Arrow",
+          "description": "Maximize window"
+        },
+        {
+          "command": "Win + Down Arrow",
+          "description": "Restore/Minimize window"
+        },
+        {
+          "command": "Alt + Tab",
+          "description": "Switch between open apps"
+        },
+        {
+          "command": "Alt + Shift + Tab",
+          "description": "Switch between open apps (reverse)"
+        },
+        {
+          "command": "Ctrl + Alt + Tab",
+          "description": "View open apps (stays open)"
+        },
+        {
+          "command": "Win + Ctrl + D",
+          "description": "Create new virtual desktop"
+        },
+        {
+          "command": "Win + Ctrl + F4",
+          "description": "Close current virtual desktop"
+        },
+        {
+          "command": "Win + Ctrl + Left/Right",
+          "description": "Switch between virtual desktops"
+        },
+        {
+          "command": "Win + 1-9",
+          "description": "Open app from taskbar (by position)"
+        },
+        {
+          "command": "Win + Shift + 1-9",
+          "description": "Open new instance of taskbar app"
+        },
+        {
+          "command": "Win + Ctrl + 1-9",
+          "description": "Switch to last active window of app"
+        }
+      ]
+    },
+    {
+      "name": "File Explorer",
+      "shortcuts": [
+        {
+          "command": "Win + E",
+          "description": "Open File Explorer"
+        },
+        {
+          "command": "Ctrl + N",
+          "description": "Open new window"
+        },
+        {
+          "command": "Ctrl + W",
+          "description": "Close current window"
+        },
+        {
+          "command": "Ctrl + Shift + N",
+          "description": "Create new folder"
+        },
+        {
+          "command": "Alt + Left Arrow",
+          "description": "Go back"
+        },
+        {
+          "command": "Alt + Right Arrow",
+          "description": "Go forward"
+        },
+        {
+          "command": "Alt + Up Arrow",
+          "description": "Go up one level"
+        },
+        {
+          "command": "Alt + D",
+          "description": "Select address bar"
+        },
+        {
+          "command": "Alt + Enter",
+          "description": "Open Properties"
+        },
+        {
+          "command": "Ctrl + E",
+          "description": "Select search box"
+        },
+        {
+          "command": "Ctrl + F",
+          "description": "Select search box"
+        },
+        {
+          "command": "Ctrl + Shift + E",
+          "description": "Display all folders above selected"
+        },
+        {
+          "command": "F2",
+          "description": "Rename selected item"
+        },
+        {
+          "command": "F4",
+          "description": "Display address bar list"
+        },
+        {
+          "command": "F5",
+          "description": "Refresh window"
+        },
+        {
+          "command": "F6",
+          "description": "Cycle through screen elements"
+        },
+        {
+          "command": "F11",
+          "description": "Maximize/minimize window"
+        },
+        {
+          "command": "Ctrl + Mouse Wheel",
+          "description": "Change file/folder icon size"
+        },
+        {
+          "command": "Home",
+          "description": "Go to top of window"
+        },
+        {
+          "command": "End",
+          "description": "Go to bottom of window"
+        }
+      ]
+    },
+    {
+      "name": "Command Prompt & PowerShell",
+      "shortcuts": [
+        {
+          "command": "Ctrl + C",
+          "description": "Copy selected text"
+        },
+        {
+          "command": "Ctrl + V",
+          "description": "Paste text"
+        },
+        {
+          "command": "Ctrl + A",
+          "description": "Select all text"
+        },
+        {
+          "command": "Ctrl + F",
+          "description": "Find text"
+        },
+        {
+          "command": "Ctrl + M",
+          "description": "Enter Mark mode"
+        },
+        {
+          "command": "Up/Down Arrow",
+          "description": "Navigate command history"
+        },
+        {
+          "command": "F7",
+          "description": "Display command history"
+        },
+        {
+          "command": "Tab",
+          "description": "Autocomplete file/folder names"
+        },
+        {
+          "command": "Ctrl + Home/End",
+          "description": "Scroll to top/bottom"
+        },
+        {
+          "command": "Alt + Enter",
+          "description": "Toggle fullscreen mode"
+        }
+      ]
+    },
+    {
+      "name": "Task Manager",
+      "shortcuts": [
+        {
+          "command": "Ctrl + Shift + Esc",
+          "description": "Open Task Manager"
+        },
+        {
+          "command": "Ctrl + Alt + Delete",
+          "description": "Open Security options screen"
+        },
+        {
+          "command": "Alt + E",
+          "description": "End task (in Task Manager)"
+        },
+        {
+          "command": "Alt + N",
+          "description": "Create new task"
+        }
+      ]
+    },
+    {
+      "name": "Browser Shortcuts",
+      "shortcuts": [
+        {
+          "command": "Ctrl + T",
+          "description": "Open new tab"
+        },
+        {
+          "command": "Ctrl + W",
+          "description": "Close current tab"
+        },
+        {
+          "command": "Ctrl + Shift + T",
+          "description": "Reopen last closed tab"
+        },
+        {
+          "command": "Ctrl + Tab",
+          "description": "Switch to next tab"
+        },
+        {
+          "command": "Ctrl + Shift + Tab",
+          "description": "Switch to previous tab"
+        },
+        {
+          "command": "Ctrl + 1-8",
+          "description": "Jump to specific tab"
+        },
+        {
+          "command": "Ctrl + 9",
+          "description": "Jump to last tab"
+        },
+        {
+          "command": "Ctrl + N",
+          "description": "Open new window"
+        },
+        {
+          "command": "Ctrl + Shift + N",
+          "description": "Open incognito/private window"
+        },
+        {
+          "command": "Ctrl + H",
+          "description": "Open history"
+        },
+        {
+          "command": "Ctrl + J",
+          "description": "Open downloads"
+        },
+        {
+          "command": "Ctrl + D",
+          "description": "Bookmark current page"
+        },
+        {
+          "command": "Ctrl + Shift + D",
+          "description": "Bookmark all open tabs"
+        },
+        {
+          "command": "Ctrl + L",
+          "description": "Select address bar"
+        },
+        {
+          "command": "Ctrl + R",
+          "description": "Reload page"
+        },
+        {
+          "command": "Ctrl + Shift + R",
+          "description": "Hard reload (bypass cache)"
+        },
+        {
+          "command": "F12",
+          "description": "Open Developer Tools"
+        },
+        {
+          "command": "Ctrl + Shift + Delete",
+          "description": "Clear browsing data"
+        },
+        {
+          "command": "Space",
+          "description": "Scroll down one page"
+        },
+        {
+          "command": "Shift + Space",
+          "description": "Scroll up one page"
+        }
+      ]
+    },
+    {
+      "name": "Text Editing",
+      "shortcuts": [
+        {
+          "command": "Ctrl + Right/Left Arrow",
+          "description": "Move cursor by word"
+        },
+        {
+          "command": "Ctrl + Up/Down Arrow",
+          "description": "Move cursor by paragraph"
+        },
+        {
+          "command": "Shift + Right/Left Arrow",
+          "description": "Select text character by character"
+        },
+        {
+          "command": "Ctrl + Shift + Right/Left",
+          "description": "Select text word by word"
+        },
+        {
+          "command": "Shift + Up/Down Arrow",
+          "description": "Select text line by line"
+        },
+        {
+          "command": "Home",
+          "description": "Go to beginning of line"
+        },
+        {
+          "command": "End",
+          "description": "Go to end of line"
+        },
+        {
+          "command": "Ctrl + Home",
+          "description": "Go to beginning of document"
+        },
+        {
+          "command": "Ctrl + End",
+          "description": "Go to end of document"
+        },
+        {
+          "command": "Ctrl + Backspace",
+          "description": "Delete previous word"
+        },
+        {
+          "command": "Ctrl + Delete",
+          "description": "Delete next word"
+        },
+        {
+          "command": "Ctrl + B",
+          "description": "Bold text"
+        },
+        {
+          "command": "Ctrl + I",
+          "description": "Italic text"
+        },
+        {
+          "command": "Ctrl + U",
+          "description": "Underline text"
+        }
+      ]
+    },
+    {
+      "name": "Dialog Box Shortcuts",
+      "shortcuts": [
+        {
+          "command": "Tab",
+          "description": "Move forward through options"
+        },
+        {
+          "command": "Shift + Tab",
+          "description": "Move backward through options"
+        },
+        {
+          "command": "Space",
+          "description": "Select/deselect checkbox"
+        },
+        {
+          "command": "Enter",
+          "description": "Activate selected button"
+        },
+        {
+          "command": "Esc",
+          "description": "Cancel and close dialog"
+        },
+        {
+          "command": "Alt + Underlined letter",
+          "description": "Activate corresponding option"
+        },
+        {
+          "command": "F4",
+          "description": "Display items in active list"
+        }
+      ]
+    },
+    {
+      "name": "Accessibility Shortcuts",
+      "shortcuts": [
+        {
+          "command": "Win + U",
+          "description": "Open Ease of Access Center"
+        },
+        {
+          "command": "Win + Ctrl + Enter",
+          "description": "Turn on Narrator"
+        },
+        {
+          "command": "Win + Plus (+)",
+          "description": "Open Magnifier"
+        },
+        {
+          "command": "Win + Alt + D",
+          "description": "Open date and time on taskbar"
+        },
+        {
+          "command": "Left Alt + Left Shift + PrtSc",
+          "description": "Turn on High Contrast"
+        },
+        {
+          "command": "Right Shift (8 seconds)",
+          "description": "Turn on Filter Keys"
+        },
+        {
+          "command": "Shift (5 times)",
+          "description": "Turn on Sticky Keys"
+        },
+        {
+          "command": "Num Lock (5 seconds)",
+          "description": "Turn on Toggle Keys"
+        }
+      ]
+    },
+    {
+      "name": "Screenshot & Recording",
+      "shortcuts": [
+        {
+          "command": "PrtSc",
+          "description": "Copy screenshot to clipboard"
+        },
+        {
+          "command": "Alt + PrtSc",
+          "description": "Screenshot active window"
+        },
+        {
+          "command": "Win + PrtSc",
+          "description": "Save screenshot to Pictures"
+        },
+        {
+          "command": "Win + Shift + S",
+          "description": "Open Snip & Sketch"
+        },
+        {
+          "command": "Win + Alt + R",
+          "description": "Start/stop recording (Game Bar)"
+        },
+        {
+          "command": "Win + Alt + PrtSc",
+          "description": "Take game screenshot"
+        },
+        {
+          "command": "Win + G",
+          "description": "Open Xbox Game Bar"
+        }
+      ]
+    },
+    {
+      "name": "System & Power",
+      "shortcuts": [
+        {
+          "command": "Win + X, U, U",
+          "description": "Shut down"
+        },
+        {
+          "command": "Win + X, U, R",
+          "description": "Restart"
+        },
+        {
+          "command": "Win + X, U, S",
+          "description": "Sleep"
+        },
+        {
+          "command": "Win + L",
+          "description": "Lock computer"
+        },
+        {
+          "command": "Alt + F4 (on desktop)",
+          "description": "Open shutdown dialog"
+        }
+      ]
+    },
+    {
+      "name": "Display & Monitors",
+      "shortcuts": [
+        {
+          "command": "Win + P",
+          "description": "Project/Display mode"
+        },
+        {
+          "command": "Win + Shift + Left/Right",
+          "description": "Move window to another monitor"
+        },
+        {
+          "command": "Win + K",
+          "description": "Connect to wireless display"
+        },
+        {
+          "command": "Ctrl + Alt + Arrow",
+          "description": "Rotate screen (if supported)"
+        }
+      ]
+    },
+    {
+      "name": "Keyboard Navigation",
+      "shortcuts": [
+        {
+          "command": "Arrow Keys",
+          "description": "Navigate menu or items"
+        },
+        {
+          "command": "Enter",
+          "description": "Select/open item"
+        },
+        {
+          "command": "Space",
+          "description": "Select item if checkbox"
+        },
+        {
+          "command": "Backspace",
+          "description": "Go back or up one level"
+        },
+        {
+          "command": "Tab",
+          "description": "Move forward through items"
+        },
+        {
+          "command": "Shift + Tab",
+          "description": "Move backward through items"
+        },
+        {
+          "command": "Esc",
+          "description": "Stop or leave current task"
+        }
+      ]
+    },
+    {
+      "name": "Run Commands",
+      "shortcuts": [
+        {
+          "command": "Win + R → cmd",
+          "description": "Open Command Prompt"
+        },
+        {
+          "command": "Win + R → powershell",
+          "description": "Open PowerShell"
+        },
+        {
+          "command": "Win + R → taskmgr",
+          "description": "Open Task Manager"
+        },
+        {
+          "command": "Win + R → control",
+          "description": "Open Control Panel"
+        },
+        {
+          "command": "Win + R → regedit",
+          "description": "Open Registry Editor"
+        },
+        {
+          "command": "Win + R → msconfig",
+          "description": "Open System Configuration"
+        },
+        {
+          "command": "Win + R → services.msc",
+          "description": "Open Services"
+        },
+        {
+          "command": "Win + R → devmgmt.msc",
+          "description": "Open Device Manager"
+        },
+        {
+          "command": "Win + R → diskmgmt.msc",
+          "description": "Open Disk Management"
+        },
+        {
+          "command": "Win + R → appwiz.cpl",
+          "description": "Open Programs and Features"
+        },
+        {
+          "command": "Win + R → ncpa.cpl",
+          "description": "Open Network Connections"
+        },
+        {
+          "command": "Win + R → mstsc",
+          "description": "Open Remote Desktop"
+        },
+        {
+          "command": "Win + R → %temp%",
+          "description": "Open Temp folder"
+        },
+        {
+          "command": "Win + R → shell:startup",
+          "description": "Open Startup folder"
+        }
+      ]
+    },
+    {
+      "name": "Advanced Shortcuts",
+      "shortcuts": [
+        {
+          "command": "Win + Pause",
+          "description": "Open System properties"
+        },
+        {
+          "command": "Win + Comma (,)",
+          "description": "Peek at desktop"
+        },
+        {
+          "command": "Win + B",
+          "description": "Set focus to notification area"
+        },
+        {
+          "command": "Win + T",
+          "description": "Cycle through taskbar apps"
+        },
+        {
+          "command": "Win + Space",
+          "description": "Switch input language"
+        },
+        {
+          "command": "Win + O",
+          "description": "Lock device orientation"
+        },
+        {
+          "command": "Win + Alt + D",
+          "description": "Show/hide date and time"
+        },
+        {
+          "command": "Ctrl + Shift + Esc",
+          "description": "Open Task Manager directly"
+        },
+        {
+          "command": "Shift + Right-click",
+          "description": "Show extended context menu"
+        },
+        {
+          "command": "Ctrl + Shift",
+          "description": "Switch keyboard layout (when held)"
+        }
+      ]
+    }
+  ]
+}

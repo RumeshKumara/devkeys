@@ -3,14 +3,489 @@
     "category": "Git Basics",
     "items": [
       {
+        "title": "Initialize Repository",
+        "command": "git init",
+        "description": "Create a new git repository"
+      },
+      {
+        "title": "Clone Repository",
+        "command": "git clone <url>",
+        "description": "Clone a repository from remote"
+      },
+      {
         "title": "Check Status",
         "command": "git status",
         "description": "Show working tree status"
       },
       {
+        "title": "Add Files",
+        "command": "git add <file>",
+        "description": "Add file to staging area"
+      },
+      {
+        "title": "Add All Files",
+        "command": "git add .",
+        "description": "Add all changes to staging"
+      },
+      {
         "title": "Commit Changes",
         "command": "git commit -m \"message\"",
         "description": "Save changes locally"
+      },
+      {
+        "title": "Commit with Add",
+        "command": "git commit -am \"message\"",
+        "description": "Add and commit tracked files"
+      },
+      {
+        "title": "View History",
+        "command": "git log",
+        "description": "Show commit history"
+      },
+      {
+        "title": "View Compact Log",
+        "command": "git log --oneline",
+        "description": "Show compact commit history"
+      },
+      {
+        "title": "View Graph",
+        "command": "git log --graph --oneline --all",
+        "description": "Show branch graph"
+      }
+    ]
+  },
+  {
+    "category": "Branching",
+    "items": [
+      {
+        "title": "List Branches",
+        "command": "git branch",
+        "description": "List all local branches"
+      },
+      {
+        "title": "List All Branches",
+        "command": "git branch -a",
+        "description": "List all local and remote branches"
+      },
+      {
+        "title": "Create Branch",
+        "command": "git branch <name>",
+        "description": "Create a new branch"
+      },
+      {
+        "title": "Switch Branch",
+        "command": "git checkout <branch>",
+        "description": "Switch to another branch"
+      },
+      {
+        "title": "Create & Switch",
+        "command": "git checkout -b <branch>",
+        "description": "Create and switch to new branch"
+      },
+      {
+        "title": "Switch Branch (new)",
+        "command": "git switch <branch>",
+        "description": "Switch to another branch"
+      },
+      {
+        "title": "Create & Switch (new)",
+        "command": "git switch -c <branch>",
+        "description": "Create and switch to new branch"
+      },
+      {
+        "title": "Delete Branch",
+        "command": "git branch -d <branch>",
+        "description": "Delete a local branch"
+      },
+      {
+        "title": "Force Delete Branch",
+        "command": "git branch -D <branch>",
+        "description": "Force delete a local branch"
+      },
+      {
+        "title": "Rename Branch",
+        "command": "git branch -m <old> <new>",
+        "description": "Rename a branch"
+      }
+    ]
+  },
+  {
+    "category": "Remote Operations",
+    "items": [
+      {
+        "title": "Add Remote",
+        "command": "git remote add origin <url>",
+        "description": "Add a remote repository"
+      },
+      {
+        "title": "View Remotes",
+        "command": "git remote -v",
+        "description": "List all remote repositories"
+      },
+      {
+        "title": "Fetch Changes",
+        "command": "git fetch",
+        "description": "Download remote changes"
+      },
+      {
+        "title": "Pull Changes",
+        "command": "git pull",
+        "description": "Fetch and merge remote changes"
+      },
+      {
+        "title": "Pull with Rebase",
+        "command": "git pull --rebase",
+        "description": "Pull and rebase local commits"
+      },
+      {
+        "title": "Push Changes",
+        "command": "git push",
+        "description": "Upload local commits to remote"
+      },
+      {
+        "title": "Push New Branch",
+        "command": "git push -u origin <branch>",
+        "description": "Push and set upstream branch"
+      },
+      {
+        "title": "Force Push",
+        "command": "git push --force",
+        "description": "Force push changes to remote"
+      },
+      {
+        "title": "Delete Remote Branch",
+        "command": "git push origin --delete <branch>",
+        "description": "Delete a remote branch"
+      },
+      {
+        "title": "Remove Remote",
+        "command": "git remote remove <name>",
+        "description": "Remove a remote repository"
+      }
+    ]
+  },
+  {
+    "category": "Merging & Rebasing",
+    "items": [
+      {
+        "title": "Merge Branch",
+        "command": "git merge <branch>",
+        "description": "Merge a branch into current"
+      },
+      {
+        "title": "Merge No Fast-Forward",
+        "command": "git merge --no-ff <branch>",
+        "description": "Merge with merge commit"
+      },
+      {
+        "title": "Abort Merge",
+        "command": "git merge --abort",
+        "description": "Cancel merge operation"
+      },
+      {
+        "title": "Rebase Branch",
+        "command": "git rebase <branch>",
+        "description": "Rebase current branch"
+      },
+      {
+        "title": "Interactive Rebase",
+        "command": "git rebase -i HEAD~<n>",
+        "description": "Interactive rebase last n commits"
+      },
+      {
+        "title": "Continue Rebase",
+        "command": "git rebase --continue",
+        "description": "Continue after resolving conflicts"
+      },
+      {
+        "title": "Abort Rebase",
+        "command": "git rebase --abort",
+        "description": "Cancel rebase operation"
+      },
+      {
+        "title": "Cherry Pick",
+        "command": "git cherry-pick <commit>",
+        "description": "Apply a specific commit"
+      }
+    ]
+  },
+  {
+    "category": "Undoing Changes",
+    "items": [
+      {
+        "title": "Discard File Changes",
+        "command": "git checkout -- <file>",
+        "description": "Discard changes in working directory"
+      },
+      {
+        "title": "Restore File",
+        "command": "git restore <file>",
+        "description": "Restore file to last commit"
+      },
+      {
+        "title": "Unstage File",
+        "command": "git reset HEAD <file>",
+        "description": "Remove file from staging"
+      },
+      {
+        "title": "Unstage File (new)",
+        "command": "git restore --staged <file>",
+        "description": "Remove file from staging"
+      },
+      {
+        "title": "Amend Last Commit",
+        "command": "git commit --amend",
+        "description": "Modify the last commit"
+      },
+      {
+        "title": "Soft Reset",
+        "command": "git reset --soft HEAD~1",
+        "description": "Undo last commit, keep changes"
+      },
+      {
+        "title": "Mixed Reset",
+        "command": "git reset HEAD~1",
+        "description": "Undo commit and unstage"
+      },
+      {
+        "title": "Hard Reset",
+        "command": "git reset --hard HEAD~1",
+        "description": "Undo commit and discard changes"
+      },
+      {
+        "title": "Revert Commit",
+        "command": "git revert <commit>",
+        "description": "Create new commit that undoes changes"
+      },
+      {
+        "title": "Clean Untracked",
+        "command": "git clean -fd",
+        "description": "Remove untracked files and directories"
+      }
+    ]
+  },
+  {
+    "category": "Stashing",
+    "items": [
+      {
+        "title": "Stash Changes",
+        "command": "git stash",
+        "description": "Save changes temporarily"
+      },
+      {
+        "title": "Stash with Message",
+        "command": "git stash save \"message\"",
+        "description": "Stash with description"
+      },
+      {
+        "title": "List Stashes",
+        "command": "git stash list",
+        "description": "Show all stashed changes"
+      },
+      {
+        "title": "Apply Stash",
+        "command": "git stash apply",
+        "description": "Apply most recent stash"
+      },
+      {
+        "title": "Apply Specific Stash",
+        "command": "git stash apply stash@{n}",
+        "description": "Apply a specific stash"
+      },
+      {
+        "title": "Pop Stash",
+        "command": "git stash pop",
+        "description": "Apply and remove stash"
+      },
+      {
+        "title": "Drop Stash",
+        "command": "git stash drop",
+        "description": "Delete most recent stash"
+      },
+      {
+        "title": "Clear Stashes",
+        "command": "git stash clear",
+        "description": "Delete all stashes"
+      },
+      {
+        "title": "Show Stash",
+        "command": "git stash show",
+        "description": "Show stash changes"
+      }
+    ]
+  },
+  {
+    "category": "Inspection & Comparison",
+    "items": [
+      {
+        "title": "Show Changes",
+        "command": "git diff",
+        "description": "Show unstaged changes"
+      },
+      {
+        "title": "Show Staged Changes",
+        "command": "git diff --staged",
+        "description": "Show staged changes"
+      },
+      {
+        "title": "Compare Branches",
+        "command": "git diff <branch1> <branch2>",
+        "description": "Compare two branches"
+      },
+      {
+        "title": "Show Commit",
+        "command": "git show <commit>",
+        "description": "Show commit details"
+      },
+      {
+        "title": "Blame File",
+        "command": "git blame <file>",
+        "description": "Show who changed each line"
+      },
+      {
+        "title": "Search Commits",
+        "command": "git log -S \"text\"",
+        "description": "Find commits with specific text"
+      },
+      {
+        "title": "File History",
+        "command": "git log --follow <file>",
+        "description": "Show file commit history"
+      },
+      {
+        "title": "Show References",
+        "command": "git reflog",
+        "description": "Show reference logs"
+      }
+    ]
+  },
+  {
+    "category": "Tags",
+    "items": [
+      {
+        "title": "List Tags",
+        "command": "git tag",
+        "description": "List all tags"
+      },
+      {
+        "title": "Create Tag",
+        "command": "git tag <name>",
+        "description": "Create a lightweight tag"
+      },
+      {
+        "title": "Create Annotated Tag",
+        "command": "git tag -a <name> -m \"message\"",
+        "description": "Create an annotated tag"
+      },
+      {
+        "title": "Tag Specific Commit",
+        "command": "git tag <name> <commit>",
+        "description": "Tag a specific commit"
+      },
+      {
+        "title": "Push Tag",
+        "command": "git push origin <tag>",
+        "description": "Push a tag to remote"
+      },
+      {
+        "title": "Push All Tags",
+        "command": "git push --tags",
+        "description": "Push all tags to remote"
+      },
+      {
+        "title": "Delete Tag",
+        "command": "git tag -d <name>",
+        "description": "Delete a local tag"
+      },
+      {
+        "title": "Delete Remote Tag",
+        "command": "git push origin --delete <tag>",
+        "description": "Delete a remote tag"
+      }
+    ]
+  },
+  {
+    "category": "Configuration",
+    "items": [
+      {
+        "title": "Set Username",
+        "command": "git config --global user.name \"name\"",
+        "description": "Set global username"
+      },
+      {
+        "title": "Set Email",
+        "command": "git config --global user.email \"email\"",
+        "description": "Set global email"
+      },
+      {
+        "title": "View Config",
+        "command": "git config --list",
+        "description": "List all configurations"
+      },
+      {
+        "title": "Set Editor",
+        "command": "git config --global core.editor \"editor\"",
+        "description": "Set default editor"
+      },
+      {
+        "title": "Enable Color",
+        "command": "git config --global color.ui auto",
+        "description": "Enable colored output"
+      },
+      {
+        "title": "Set Alias",
+        "command": "git config --global alias.<name> <command>",
+        "description": "Create command alias"
+      },
+      {
+        "title": "Unset Config",
+        "command": "git config --global --unset <key>",
+        "description": "Remove configuration"
+      }
+    ]
+  },
+  {
+    "category": "Advanced",
+    "items": [
+      {
+        "title": "Submodule Add",
+        "command": "git submodule add <url>",
+        "description": "Add a submodule"
+      },
+      {
+        "title": "Submodule Update",
+        "command": "git submodule update --init",
+        "description": "Initialize and update submodules"
+      },
+      {
+        "title": "Bisect Start",
+        "command": "git bisect start",
+        "description": "Start binary search for bug"
+      },
+      {
+        "title": "Archive Repository",
+        "command": "git archive --format=zip HEAD > file.zip",
+        "description": "Create archive of repository"
+      },
+      {
+        "title": "Show Remote Info",
+        "command": "git remote show origin",
+        "description": "Show remote repository info"
+      },
+      {
+        "title": "Prune Remote Branches",
+        "command": "git remote prune origin",
+        "description": "Remove stale remote branches"
+      },
+      {
+        "title": "Garbage Collection",
+        "command": "git gc",
+        "description": "Clean up and optimize repository"
+      },
+      {
+        "title": "Verify Objects",
+        "command": "git fsck",
+        "description": "Verify repository integrity"
       }
     ]
   }

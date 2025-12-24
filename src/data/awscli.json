@@ -1,0 +1,748 @@
+{
+  "categories": [
+    {
+      "name": "Configuration",
+      "shortcuts": [
+        {
+          "command": "aws configure",
+          "description": "Configure AWS CLI settings"
+        },
+        {
+          "command": "aws configure list",
+          "description": "List current configuration"
+        },
+        {
+          "command": "aws configure get <variable>",
+          "description": "Get specific config value"
+        },
+        {
+          "command": "aws configure set <variable> <value>",
+          "description": "Set config value"
+        },
+        {
+          "command": "aws configure --profile <name>",
+          "description": "Configure named profile"
+        },
+        {
+          "command": "aws sts get-caller-identity",
+          "description": "Get current user/role identity"
+        }
+      ]
+    },
+    {
+      "name": "S3 Operations",
+      "shortcuts": [
+        {
+          "command": "aws s3 ls",
+          "description": "List all S3 buckets"
+        },
+        {
+          "command": "aws s3 ls s3://bucket-name",
+          "description": "List contents of a bucket"
+        },
+        {
+          "command": "aws s3 ls s3://bucket-name/path/",
+          "description": "List contents of a folder"
+        },
+        {
+          "command": "aws s3 cp file.txt s3://bucket-name/",
+          "description": "Copy file to S3"
+        },
+        {
+          "command": "aws s3 cp s3://bucket-name/file.txt .",
+          "description": "Download file from S3"
+        },
+        {
+          "command": "aws s3 sync . s3://bucket-name/",
+          "description": "Sync local directory to S3"
+        },
+        {
+          "command": "aws s3 sync s3://bucket-name/ .",
+          "description": "Sync S3 to local directory"
+        },
+        {
+          "command": "aws s3 rm s3://bucket-name/file.txt",
+          "description": "Delete file from S3"
+        },
+        {
+          "command": "aws s3 rm s3://bucket-name/ --recursive",
+          "description": "Delete all files in bucket"
+        },
+        {
+          "command": "aws s3 mv s3://bucket/old.txt s3://bucket/new.txt",
+          "description": "Move/rename file in S3"
+        },
+        {
+          "command": "aws s3 mb s3://bucket-name",
+          "description": "Create S3 bucket"
+        },
+        {
+          "command": "aws s3 rb s3://bucket-name",
+          "description": "Remove empty bucket"
+        },
+        {
+          "command": "aws s3 rb s3://bucket-name --force",
+          "description": "Remove bucket and all contents"
+        },
+        {
+          "command": "aws s3 presign s3://bucket-name/file.txt",
+          "description": "Generate presigned URL"
+        }
+      ]
+    },
+    {
+      "name": "EC2 Instances",
+      "shortcuts": [
+        {
+          "command": "aws ec2 describe-instances",
+          "description": "List all EC2 instances"
+        },
+        {
+          "command": "aws ec2 describe-instances --instance-ids i-xxxxx",
+          "description": "Describe specific instance"
+        },
+        {
+          "command": "aws ec2 start-instances --instance-ids i-xxxxx",
+          "description": "Start EC2 instance"
+        },
+        {
+          "command": "aws ec2 stop-instances --instance-ids i-xxxxx",
+          "description": "Stop EC2 instance"
+        },
+        {
+          "command": "aws ec2 reboot-instances --instance-ids i-xxxxx",
+          "description": "Reboot EC2 instance"
+        },
+        {
+          "command": "aws ec2 terminate-instances --instance-ids i-xxxxx",
+          "description": "Terminate EC2 instance"
+        },
+        {
+          "command": "aws ec2 run-instances --image-id ami-xxxxx --instance-type t2.micro",
+          "description": "Launch new EC2 instance"
+        },
+        {
+          "command": "aws ec2 describe-instance-status",
+          "description": "Check instance status"
+        },
+        {
+          "command": "aws ec2 create-tags --resources i-xxxxx --tags Key=Name,Value=MyInstance",
+          "description": "Tag EC2 instance"
+        }
+      ]
+    },
+    {
+      "name": "EC2 Key Pairs & Security Groups",
+      "shortcuts": [
+        {
+          "command": "aws ec2 describe-key-pairs",
+          "description": "List all key pairs"
+        },
+        {
+          "command": "aws ec2 create-key-pair --key-name MyKeyPair",
+          "description": "Create new key pair"
+        },
+        {
+          "command": "aws ec2 delete-key-pair --key-name MyKeyPair",
+          "description": "Delete key pair"
+        },
+        {
+          "command": "aws ec2 describe-security-groups",
+          "description": "List security groups"
+        },
+        {
+          "command": "aws ec2 create-security-group --group-name MyGroup --description 'My SG'",
+          "description": "Create security group"
+        },
+        {
+          "command": "aws ec2 authorize-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 22 --cidr 0.0.0.0/0",
+          "description": "Add inbound rule to security group"
+        },
+        {
+          "command": "aws ec2 revoke-security-group-ingress --group-id sg-xxxxx --protocol tcp --port 22 --cidr 0.0.0.0/0",
+          "description": "Remove inbound rule"
+        }
+      ]
+    },
+    {
+      "name": "EC2 Images (AMI)",
+      "shortcuts": [
+        {
+          "command": "aws ec2 describe-images --owners self",
+          "description": "List your AMIs"
+        },
+        {
+          "command": "aws ec2 describe-images --owners amazon --filters 'Name=name,Values=amzn2-ami-hvm-*'",
+          "description": "List Amazon Linux AMIs"
+        },
+        {
+          "command": "aws ec2 create-image --instance-id i-xxxxx --name 'My AMI'",
+          "description": "Create AMI from instance"
+        },
+        {
+          "command": "aws ec2 deregister-image --image-id ami-xxxxx",
+          "description": "Delete AMI"
+        }
+      ]
+    },
+    {
+      "name": "EC2 Volumes (EBS)",
+      "shortcuts": [
+        {
+          "command": "aws ec2 describe-volumes",
+          "description": "List all EBS volumes"
+        },
+        {
+          "command": "aws ec2 create-volume --availability-zone us-east-1a --size 10",
+          "description": "Create EBS volume"
+        },
+        {
+          "command": "aws ec2 attach-volume --volume-id vol-xxxxx --instance-id i-xxxxx --device /dev/sdf",
+          "description": "Attach volume to instance"
+        },
+        {
+          "command": "aws ec2 detach-volume --volume-id vol-xxxxx",
+          "description": "Detach volume"
+        },
+        {
+          "command": "aws ec2 delete-volume --volume-id vol-xxxxx",
+          "description": "Delete volume"
+        },
+        {
+          "command": "aws ec2 create-snapshot --volume-id vol-xxxxx",
+          "description": "Create volume snapshot"
+        },
+        {
+          "command": "aws ec2 describe-snapshots --owner-ids self",
+          "description": "List your snapshots"
+        }
+      ]
+    },
+    {
+      "name": "IAM Users & Groups",
+      "shortcuts": [
+        {
+          "command": "aws iam list-users",
+          "description": "List all IAM users"
+        },
+        {
+          "command": "aws iam get-user",
+          "description": "Get current user details"
+        },
+        {
+          "command": "aws iam create-user --user-name username",
+          "description": "Create IAM user"
+        },
+        {
+          "command": "aws iam delete-user --user-name username",
+          "description": "Delete IAM user"
+        },
+        {
+          "command": "aws iam list-groups",
+          "description": "List IAM groups"
+        },
+        {
+          "command": "aws iam create-group --group-name groupname",
+          "description": "Create IAM group"
+        },
+        {
+          "command": "aws iam add-user-to-group --user-name username --group-name groupname",
+          "description": "Add user to group"
+        },
+        {
+          "command": "aws iam remove-user-from-group --user-name username --group-name groupname",
+          "description": "Remove user from group"
+        }
+      ]
+    },
+    {
+      "name": "IAM Policies & Roles",
+      "shortcuts": [
+        {
+          "command": "aws iam list-policies",
+          "description": "List IAM policies"
+        },
+        {
+          "command": "aws iam create-policy --policy-name MyPolicy --policy-document file://policy.json",
+          "description": "Create IAM policy"
+        },
+        {
+          "command": "aws iam attach-user-policy --user-name username --policy-arn arn:aws:iam::aws:policy/PolicyName",
+          "description": "Attach policy to user"
+        },
+        {
+          "command": "aws iam detach-user-policy --user-name username --policy-arn arn:aws:iam::aws:policy/PolicyName",
+          "description": "Detach policy from user"
+        },
+        {
+          "command": "aws iam list-roles",
+          "description": "List IAM roles"
+        },
+        {
+          "command": "aws iam create-role --role-name MyRole --assume-role-policy-document file://trust-policy.json",
+          "description": "Create IAM role"
+        },
+        {
+          "command": "aws iam attach-role-policy --role-name MyRole --policy-arn arn:aws:iam::aws:policy/PolicyName",
+          "description": "Attach policy to role"
+        }
+      ]
+    },
+    {
+      "name": "IAM Access Keys",
+      "shortcuts": [
+        {
+          "command": "aws iam list-access-keys --user-name username",
+          "description": "List user access keys"
+        },
+        {
+          "command": "aws iam create-access-key --user-name username",
+          "description": "Create access key for user"
+        },
+        {
+          "command": "aws iam delete-access-key --user-name username --access-key-id AKIAXXXXX",
+          "description": "Delete access key"
+        },
+        {
+          "command": "aws iam update-access-key --user-name username --access-key-id AKIAXXXXX --status Inactive",
+          "description": "Deactivate access key"
+        }
+      ]
+    },
+    {
+      "name": "Lambda Functions",
+      "shortcuts": [
+        {
+          "command": "aws lambda list-functions",
+          "description": "List all Lambda functions"
+        },
+        {
+          "command": "aws lambda get-function --function-name myfunction",
+          "description": "Get function details"
+        },
+        {
+          "command": "aws lambda create-function --function-name myfunction --runtime python3.9 --handler lambda_function.handler --role arn:aws:iam::xxx:role/xxx --zip-file fileb://function.zip",
+          "description": "Create Lambda function"
+        },
+        {
+          "command": "aws lambda update-function-code --function-name myfunction --zip-file fileb://function.zip",
+          "description": "Update function code"
+        },
+        {
+          "command": "aws lambda invoke --function-name myfunction output.json",
+          "description": "Invoke Lambda function"
+        },
+        {
+          "command": "aws lambda delete-function --function-name myfunction",
+          "description": "Delete Lambda function"
+        },
+        {
+          "command": "aws lambda list-layers",
+          "description": "List Lambda layers"
+        }
+      ]
+    },
+    {
+      "name": "RDS Databases",
+      "shortcuts": [
+        {
+          "command": "aws rds describe-db-instances",
+          "description": "List RDS instances"
+        },
+        {
+          "command": "aws rds create-db-instance --db-instance-identifier mydb --db-instance-class db.t3.micro --engine mysql --master-username admin --master-user-password password --allocated-storage 20",
+          "description": "Create RDS instance"
+        },
+        {
+          "command": "aws rds start-db-instance --db-instance-identifier mydb",
+          "description": "Start RDS instance"
+        },
+        {
+          "command": "aws rds stop-db-instance --db-instance-identifier mydb",
+          "description": "Stop RDS instance"
+        },
+        {
+          "command": "aws rds reboot-db-instance --db-instance-identifier mydb",
+          "description": "Reboot RDS instance"
+        },
+        {
+          "command": "aws rds delete-db-instance --db-instance-identifier mydb --skip-final-snapshot",
+          "description": "Delete RDS instance"
+        },
+        {
+          "command": "aws rds create-db-snapshot --db-instance-identifier mydb --db-snapshot-identifier mysnapshot",
+          "description": "Create RDS snapshot"
+        },
+        {
+          "command": "aws rds describe-db-snapshots",
+          "description": "List RDS snapshots"
+        }
+      ]
+    },
+    {
+      "name": "DynamoDB",
+      "shortcuts": [
+        {
+          "command": "aws dynamodb list-tables",
+          "description": "List DynamoDB tables"
+        },
+        {
+          "command": "aws dynamodb describe-table --table-name MyTable",
+          "description": "Describe table"
+        },
+        {
+          "command": "aws dynamodb create-table --table-name MyTable --attribute-definitions AttributeName=ID,AttributeType=S --key-schema AttributeName=ID,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5",
+          "description": "Create DynamoDB table"
+        },
+        {
+          "command": "aws dynamodb delete-table --table-name MyTable",
+          "description": "Delete table"
+        },
+        {
+          "command": "aws dynamodb scan --table-name MyTable",
+          "description": "Scan table"
+        },
+        {
+          "command": "aws dynamodb get-item --table-name MyTable --key '{\"ID\": {\"S\": \"123\"}}'",
+          "description": "Get item from table"
+        },
+        {
+          "command": "aws dynamodb put-item --table-name MyTable --item '{\"ID\": {\"S\": \"123\"}}'",
+          "description": "Put item in table"
+        }
+      ]
+    },
+    {
+      "name": "CloudFormation",
+      "shortcuts": [
+        {
+          "command": "aws cloudformation list-stacks",
+          "description": "List CloudFormation stacks"
+        },
+        {
+          "command": "aws cloudformation describe-stacks --stack-name mystack",
+          "description": "Describe stack"
+        },
+        {
+          "command": "aws cloudformation create-stack --stack-name mystack --template-body file://template.yaml",
+          "description": "Create stack"
+        },
+        {
+          "command": "aws cloudformation update-stack --stack-name mystack --template-body file://template.yaml",
+          "description": "Update stack"
+        },
+        {
+          "command": "aws cloudformation delete-stack --stack-name mystack",
+          "description": "Delete stack"
+        },
+        {
+          "command": "aws cloudformation validate-template --template-body file://template.yaml",
+          "description": "Validate template"
+        },
+        {
+          "command": "aws cloudformation describe-stack-events --stack-name mystack",
+          "description": "View stack events"
+        }
+      ]
+    },
+    {
+      "name": "VPC & Networking",
+      "shortcuts": [
+        {
+          "command": "aws ec2 describe-vpcs",
+          "description": "List VPCs"
+        },
+        {
+          "command": "aws ec2 create-vpc --cidr-block 10.0.0.0/16",
+          "description": "Create VPC"
+        },
+        {
+          "command": "aws ec2 describe-subnets",
+          "description": "List subnets"
+        },
+        {
+          "command": "aws ec2 create-subnet --vpc-id vpc-xxxxx --cidr-block 10.0.1.0/24",
+          "description": "Create subnet"
+        },
+        {
+          "command": "aws ec2 describe-internet-gateways",
+          "description": "List internet gateways"
+        },
+        {
+          "command": "aws ec2 create-internet-gateway",
+          "description": "Create internet gateway"
+        },
+        {
+          "command": "aws ec2 attach-internet-gateway --vpc-id vpc-xxxxx --internet-gateway-id igw-xxxxx",
+          "description": "Attach IGW to VPC"
+        },
+        {
+          "command": "aws ec2 describe-route-tables",
+          "description": "List route tables"
+        }
+      ]
+    },
+    {
+      "name": "ECS (Container Service)",
+      "shortcuts": [
+        {
+          "command": "aws ecs list-clusters",
+          "description": "List ECS clusters"
+        },
+        {
+          "command": "aws ecs describe-clusters --clusters cluster-name",
+          "description": "Describe cluster"
+        },
+        {
+          "command": "aws ecs create-cluster --cluster-name mycluster",
+          "description": "Create ECS cluster"
+        },
+        {
+          "command": "aws ecs list-tasks --cluster mycluster",
+          "description": "List tasks in cluster"
+        },
+        {
+          "command": "aws ecs list-services --cluster mycluster",
+          "description": "List services in cluster"
+        },
+        {
+          "command": "aws ecs run-task --cluster mycluster --task-definition mytask",
+          "description": "Run task"
+        }
+      ]
+    },
+    {
+      "name": "CloudWatch Logs",
+      "shortcuts": [
+        {
+          "command": "aws logs describe-log-groups",
+          "description": "List log groups"
+        },
+        {
+          "command": "aws logs describe-log-streams --log-group-name /aws/lambda/myfunction",
+          "description": "List log streams"
+        },
+        {
+          "command": "aws logs tail /aws/lambda/myfunction --follow",
+          "description": "Tail logs in real-time"
+        },
+        {
+          "command": "aws logs filter-log-events --log-group-name /aws/lambda/myfunction --filter-pattern 'ERROR'",
+          "description": "Filter log events"
+        },
+        {
+          "command": "aws logs create-log-group --log-group-name myloggroup",
+          "description": "Create log group"
+        },
+        {
+          "command": "aws logs delete-log-group --log-group-name myloggroup",
+          "description": "Delete log group"
+        }
+      ]
+    },
+    {
+      "name": "SNS (Notifications)",
+      "shortcuts": [
+        {
+          "command": "aws sns list-topics",
+          "description": "List SNS topics"
+        },
+        {
+          "command": "aws sns create-topic --name mytopic",
+          "description": "Create SNS topic"
+        },
+        {
+          "command": "aws sns subscribe --topic-arn arn:aws:sns:region:account:mytopic --protocol email --notification-endpoint email@example.com",
+          "description": "Subscribe to topic"
+        },
+        {
+          "command": "aws sns publish --topic-arn arn:aws:sns:region:account:mytopic --message 'Hello'",
+          "description": "Publish message to topic"
+        },
+        {
+          "command": "aws sns list-subscriptions",
+          "description": "List subscriptions"
+        }
+      ]
+    },
+    {
+      "name": "SQS (Queue Service)",
+      "shortcuts": [
+        {
+          "command": "aws sqs list-queues",
+          "description": "List SQS queues"
+        },
+        {
+          "command": "aws sqs create-queue --queue-name myqueue",
+          "description": "Create queue"
+        },
+        {
+          "command": "aws sqs send-message --queue-url https://sqs.region.amazonaws.com/account/queue --message-body 'Hello'",
+          "description": "Send message to queue"
+        },
+        {
+          "command": "aws sqs receive-message --queue-url https://sqs.region.amazonaws.com/account/queue",
+          "description": "Receive message from queue"
+        },
+        {
+          "command": "aws sqs delete-message --queue-url https://sqs.region.amazonaws.com/account/queue --receipt-handle xxxxx",
+          "description": "Delete message from queue"
+        },
+        {
+          "command": "aws sqs delete-queue --queue-url https://sqs.region.amazonaws.com/account/queue",
+          "description": "Delete queue"
+        }
+      ]
+    },
+    {
+      "name": "Route53 (DNS)",
+      "shortcuts": [
+        {
+          "command": "aws route53 list-hosted-zones",
+          "description": "List hosted zones"
+        },
+        {
+          "command": "aws route53 create-hosted-zone --name example.com --caller-reference unique-string",
+          "description": "Create hosted zone"
+        },
+        {
+          "command": "aws route53 list-resource-record-sets --hosted-zone-id Z123456",
+          "description": "List DNS records"
+        },
+        {
+          "command": "aws route53 change-resource-record-sets --hosted-zone-id Z123456 --change-batch file://changes.json",
+          "description": "Update DNS records"
+        }
+      ]
+    },
+    {
+      "name": "ELB (Load Balancers)",
+      "shortcuts": [
+        {
+          "command": "aws elbv2 describe-load-balancers",
+          "description": "List load balancers"
+        },
+        {
+          "command": "aws elbv2 describe-target-groups",
+          "description": "List target groups"
+        },
+        {
+          "command": "aws elbv2 describe-target-health --target-group-arn arn:aws:xxx",
+          "description": "Check target health"
+        },
+        {
+          "command": "aws elbv2 create-load-balancer --name myalb --subnets subnet-xxx subnet-yyy",
+          "description": "Create load balancer"
+        }
+      ]
+    },
+    {
+      "name": "Secrets Manager",
+      "shortcuts": [
+        {
+          "command": "aws secretsmanager list-secrets",
+          "description": "List secrets"
+        },
+        {
+          "command": "aws secretsmanager create-secret --name mysecret --secret-string 'mypassword'",
+          "description": "Create secret"
+        },
+        {
+          "command": "aws secretsmanager get-secret-value --secret-id mysecret",
+          "description": "Get secret value"
+        },
+        {
+          "command": "aws secretsmanager update-secret --secret-id mysecret --secret-string 'newpassword'",
+          "description": "Update secret"
+        },
+        {
+          "command": "aws secretsmanager delete-secret --secret-id mysecret",
+          "description": "Delete secret"
+        }
+      ]
+    },
+    {
+      "name": "Systems Manager (SSM)",
+      "shortcuts": [
+        {
+          "command": "aws ssm get-parameter --name /my/parameter",
+          "description": "Get parameter"
+        },
+        {
+          "command": "aws ssm put-parameter --name /my/parameter --value 'myvalue' --type String",
+          "description": "Put parameter"
+        },
+        {
+          "command": "aws ssm describe-parameters",
+          "description": "List parameters"
+        },
+        {
+          "command": "aws ssm start-session --target i-xxxxx",
+          "description": "Start SSM session to instance"
+        },
+        {
+          "command": "aws ssm send-command --document-name 'AWS-RunShellScript' --targets 'Key=instanceids,Values=i-xxxxx' --parameters 'commands=[\"ls -la\"]'",
+          "description": "Run command on instance"
+        }
+      ]
+    },
+    {
+      "name": "Cost & Billing",
+      "shortcuts": [
+        {
+          "command": "aws ce get-cost-and-usage --time-period Start=2024-01-01,End=2024-01-31 --granularity MONTHLY --metrics BlendedCost",
+          "description": "Get cost and usage"
+        },
+        {
+          "command": "aws budgets describe-budgets --account-id 123456789012",
+          "description": "List budgets"
+        }
+      ]
+    },
+    {
+      "name": "General Commands",
+      "shortcuts": [
+        {
+          "command": "aws --version",
+          "description": "Show AWS CLI version"
+        },
+        {
+          "command": "aws help",
+          "description": "Get help"
+        },
+        {
+          "command": "aws <service> help",
+          "description": "Get service-specific help"
+        },
+        {
+          "command": "aws <service> <command> --generate-cli-skeleton",
+          "description": "Generate command template"
+        },
+        {
+          "command": "aws <command> --profile <profile-name>",
+          "description": "Use specific profile"
+        },
+        {
+          "command": "aws <command> --region us-east-1",
+          "description": "Specify region"
+        },
+        {
+          "command": "aws <command> --output json",
+          "description": "Output as JSON"
+        },
+        {
+          "command": "aws <command> --output table",
+          "description": "Output as table"
+        },
+        {
+          "command": "aws <command> --output text",
+          "description": "Output as text"
+        },
+        {
+          "command": "aws <command> --dry-run",
+          "description": "Perform dry run"
+        }
+      ]
+    }
+  ]
+}

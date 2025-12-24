@@ -1,0 +1,493 @@
+{
+  "categories": [
+    {
+      "name": "Database Operations",
+      "shortcuts": [
+        {
+          "command": "CREATE DATABASE database_name;",
+          "description": "Create a new database"
+        },
+        {
+          "command": "DROP DATABASE database_name;",
+          "description": "Delete a database"
+        },
+        {
+          "command": "SHOW DATABASES;",
+          "description": "List all databases"
+        },
+        {
+          "command": "USE database_name;",
+          "description": "Select a database to use"
+        },
+        {
+          "command": "SHOW CREATE DATABASE database_name;",
+          "description": "Show the CREATE DATABASE statement"
+        }
+      ]
+    },
+    {
+      "name": "Table Operations",
+      "shortcuts": [
+        {
+          "command": "CREATE TABLE table_name (column1 datatype, column2 datatype);",
+          "description": "Create a new table"
+        },
+        {
+          "command": "DROP TABLE table_name;",
+          "description": "Delete a table"
+        },
+        {
+          "command": "SHOW TABLES;",
+          "description": "List all tables in current database"
+        },
+        {
+          "command": "DESCRIBE table_name;",
+          "description": "Show table structure"
+        },
+        {
+          "command": "SHOW CREATE TABLE table_name;",
+          "description": "Show the CREATE TABLE statement"
+        },
+        {
+          "command": "ALTER TABLE table_name ADD column_name datatype;",
+          "description": "Add a new column to table"
+        },
+        {
+          "command": "ALTER TABLE table_name DROP COLUMN column_name;",
+          "description": "Delete a column from table"
+        },
+        {
+          "command": "ALTER TABLE table_name MODIFY COLUMN column_name datatype;",
+          "description": "Modify column datatype"
+        },
+        {
+          "command": "RENAME TABLE old_name TO new_name;",
+          "description": "Rename a table"
+        },
+        {
+          "command": "TRUNCATE TABLE table_name;",
+          "description": "Delete all data from table"
+        }
+      ]
+    },
+    {
+      "name": "Data Manipulation",
+      "shortcuts": [
+        {
+          "command": "SELECT * FROM table_name;",
+          "description": "Select all records from table"
+        },
+        {
+          "command": "SELECT column1, column2 FROM table_name;",
+          "description": "Select specific columns"
+        },
+        {
+          "command": "SELECT * FROM table_name WHERE condition;",
+          "description": "Select with condition"
+        },
+        {
+          "command": "INSERT INTO table_name (column1, column2) VALUES (value1, value2);",
+          "description": "Insert a new record"
+        },
+        {
+          "command": "UPDATE table_name SET column1 = value1 WHERE condition;",
+          "description": "Update existing records"
+        },
+        {
+          "command": "DELETE FROM table_name WHERE condition;",
+          "description": "Delete records"
+        },
+        {
+          "command": "SELECT DISTINCT column_name FROM table_name;",
+          "description": "Select distinct values"
+        },
+        {
+          "command": "SELECT * FROM table_name ORDER BY column_name ASC|DESC;",
+          "description": "Sort results"
+        },
+        {
+          "command": "SELECT * FROM table_name LIMIT number;",
+          "description": "Limit number of results"
+        },
+        {
+          "command": "SELECT * FROM table_name LIMIT offset, count;",
+          "description": "Paginate results"
+        }
+      ]
+    },
+    {
+      "name": "Joins",
+      "shortcuts": [
+        {
+          "command": "SELECT * FROM table1 INNER JOIN table2 ON table1.column = table2.column;",
+          "description": "Inner join two tables"
+        },
+        {
+          "command": "SELECT * FROM table1 LEFT JOIN table2 ON table1.column = table2.column;",
+          "description": "Left join two tables"
+        },
+        {
+          "command": "SELECT * FROM table1 RIGHT JOIN table2 ON table1.column = table2.column;",
+          "description": "Right join two tables"
+        },
+        {
+          "command": "SELECT * FROM table1 CROSS JOIN table2;",
+          "description": "Cross join two tables"
+        }
+      ]
+    },
+    {
+      "name": "Aggregate Functions",
+      "shortcuts": [
+        {
+          "command": "SELECT COUNT(*) FROM table_name;",
+          "description": "Count total records"
+        },
+        {
+          "command": "SELECT SUM(column_name) FROM table_name;",
+          "description": "Calculate sum of values"
+        },
+        {
+          "command": "SELECT AVG(column_name) FROM table_name;",
+          "description": "Calculate average"
+        },
+        {
+          "command": "SELECT MIN(column_name) FROM table_name;",
+          "description": "Find minimum value"
+        },
+        {
+          "command": "SELECT MAX(column_name) FROM table_name;",
+          "description": "Find maximum value"
+        },
+        {
+          "command": "SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name;",
+          "description": "Group by with count"
+        },
+        {
+          "command": "SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name HAVING COUNT(*) > value;",
+          "description": "Group by with condition"
+        }
+      ]
+    },
+    {
+      "name": "Indexes",
+      "shortcuts": [
+        {
+          "command": "CREATE INDEX index_name ON table_name (column_name);",
+          "description": "Create an index"
+        },
+        {
+          "command": "CREATE UNIQUE INDEX index_name ON table_name (column_name);",
+          "description": "Create a unique index"
+        },
+        {
+          "command": "DROP INDEX index_name ON table_name;",
+          "description": "Drop an index"
+        },
+        {
+          "command": "SHOW INDEX FROM table_name;",
+          "description": "Show all indexes on table"
+        }
+      ]
+    },
+    {
+      "name": "Constraints",
+      "shortcuts": [
+        {
+          "command": "ALTER TABLE table_name ADD PRIMARY KEY (column_name);",
+          "description": "Add primary key constraint"
+        },
+        {
+          "command": "ALTER TABLE table_name ADD FOREIGN KEY (column_name) REFERENCES other_table(column_name);",
+          "description": "Add foreign key constraint"
+        },
+        {
+          "command": "ALTER TABLE table_name ADD UNIQUE (column_name);",
+          "description": "Add unique constraint"
+        },
+        {
+          "command": "ALTER TABLE table_name ADD CHECK (condition);",
+          "description": "Add check constraint"
+        },
+        {
+          "command": "ALTER TABLE table_name DROP PRIMARY KEY;",
+          "description": "Drop primary key"
+        },
+        {
+          "command": "ALTER TABLE table_name DROP FOREIGN KEY constraint_name;",
+          "description": "Drop foreign key"
+        }
+      ]
+    },
+    {
+      "name": "User Management",
+      "shortcuts": [
+        {
+          "command": "CREATE USER 'username'@'host' IDENTIFIED BY 'password';",
+          "description": "Create a new user"
+        },
+        {
+          "command": "DROP USER 'username'@'host';",
+          "description": "Delete a user"
+        },
+        {
+          "command": "GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'host';",
+          "description": "Grant all privileges"
+        },
+        {
+          "command": "GRANT SELECT, INSERT ON database_name.table_name TO 'username'@'host';",
+          "description": "Grant specific privileges"
+        },
+        {
+          "command": "REVOKE ALL PRIVILEGES ON database_name.* FROM 'username'@'host';",
+          "description": "Revoke privileges"
+        },
+        {
+          "command": "SHOW GRANTS FOR 'username'@'host';",
+          "description": "Show user privileges"
+        },
+        {
+          "command": "FLUSH PRIVILEGES;",
+          "description": "Reload privileges from grant tables"
+        },
+        {
+          "command": "SET PASSWORD FOR 'username'@'host' = PASSWORD('new_password');",
+          "description": "Change user password"
+        }
+      ]
+    },
+    {
+      "name": "Transaction Control",
+      "shortcuts": [
+        {
+          "command": "START TRANSACTION;",
+          "description": "Begin a transaction"
+        },
+        {
+          "command": "COMMIT;",
+          "description": "Save changes permanently"
+        },
+        {
+          "command": "ROLLBACK;",
+          "description": "Undo changes in transaction"
+        },
+        {
+          "command": "SAVEPOINT savepoint_name;",
+          "description": "Create a savepoint"
+        },
+        {
+          "command": "ROLLBACK TO SAVEPOINT savepoint_name;",
+          "description": "Rollback to savepoint"
+        }
+      ]
+    },
+    {
+      "name": "Views",
+      "shortcuts": [
+        {
+          "command": "CREATE VIEW view_name AS SELECT column1, column2 FROM table_name WHERE condition;",
+          "description": "Create a view"
+        },
+        {
+          "command": "DROP VIEW view_name;",
+          "description": "Delete a view"
+        },
+        {
+          "command": "SHOW FULL TABLES WHERE Table_type = 'VIEW';",
+          "description": "List all views"
+        },
+        {
+          "command": "ALTER VIEW view_name AS SELECT column1 FROM table_name;",
+          "description": "Modify a view"
+        }
+      ]
+    },
+    {
+      "name": "Stored Procedures",
+      "shortcuts": [
+        {
+          "command": "DELIMITER //\nCREATE PROCEDURE procedure_name()\nBEGIN\n  -- SQL statements\nEND //\nDELIMITER ;",
+          "description": "Create a stored procedure"
+        },
+        {
+          "command": "CALL procedure_name();",
+          "description": "Execute a stored procedure"
+        },
+        {
+          "command": "DROP PROCEDURE procedure_name;",
+          "description": "Delete a stored procedure"
+        },
+        {
+          "command": "SHOW PROCEDURE STATUS;",
+          "description": "List all stored procedures"
+        },
+        {
+          "command": "SHOW CREATE PROCEDURE procedure_name;",
+          "description": "Show procedure definition"
+        }
+      ]
+    },
+    {
+      "name": "Functions",
+      "shortcuts": [
+        {
+          "command": "CREATE FUNCTION function_name(parameter datatype) RETURNS datatype\nBEGIN\n  RETURN value;\nEND;",
+          "description": "Create a function"
+        },
+        {
+          "command": "DROP FUNCTION function_name;",
+          "description": "Delete a function"
+        },
+        {
+          "command": "SHOW FUNCTION STATUS;",
+          "description": "List all functions"
+        }
+      ]
+    },
+    {
+      "name": "Triggers",
+      "shortcuts": [
+        {
+          "command": "CREATE TRIGGER trigger_name BEFORE|AFTER INSERT|UPDATE|DELETE ON table_name\nFOR EACH ROW\nBEGIN\n  -- SQL statements\nEND;",
+          "description": "Create a trigger"
+        },
+        {
+          "command": "DROP TRIGGER trigger_name;",
+          "description": "Delete a trigger"
+        },
+        {
+          "command": "SHOW TRIGGERS;",
+          "description": "List all triggers"
+        }
+      ]
+    },
+    {
+      "name": "Backup & Import",
+      "shortcuts": [
+        {
+          "command": "mysqldump -u username -p database_name > backup.sql",
+          "description": "Backup database to file"
+        },
+        {
+          "command": "mysqldump -u username -p database_name table_name > backup.sql",
+          "description": "Backup specific table"
+        },
+        {
+          "command": "mysql -u username -p database_name < backup.sql",
+          "description": "Import database from file"
+        },
+        {
+          "command": "mysqldump -u username -p --all-databases > all_backup.sql",
+          "description": "Backup all databases"
+        }
+      ]
+    },
+    {
+      "name": "System Information",
+      "shortcuts": [
+        {
+          "command": "SHOW VARIABLES;",
+          "description": "Show all system variables"
+        },
+        {
+          "command": "SHOW VARIABLES LIKE 'pattern';",
+          "description": "Show specific variables"
+        },
+        {
+          "command": "SHOW STATUS;",
+          "description": "Show server status"
+        },
+        {
+          "command": "SHOW PROCESSLIST;",
+          "description": "Show running processes"
+        },
+        {
+          "command": "SHOW ENGINES;",
+          "description": "Show available storage engines"
+        },
+        {
+          "command": "SELECT VERSION();",
+          "description": "Show MySQL version"
+        },
+        {
+          "command": "SELECT DATABASE();",
+          "description": "Show current database"
+        },
+        {
+          "command": "SELECT USER();",
+          "description": "Show current user"
+        }
+      ]
+    },
+    {
+      "name": "String Functions",
+      "shortcuts": [
+        {
+          "command": "SELECT CONCAT(column1, ' ', column2) FROM table_name;",
+          "description": "Concatenate strings"
+        },
+        {
+          "command": "SELECT UPPER(column_name) FROM table_name;",
+          "description": "Convert to uppercase"
+        },
+        {
+          "command": "SELECT LOWER(column_name) FROM table_name;",
+          "description": "Convert to lowercase"
+        },
+        {
+          "command": "SELECT SUBSTRING(column_name, start, length) FROM table_name;",
+          "description": "Extract substring"
+        },
+        {
+          "command": "SELECT LENGTH(column_name) FROM table_name;",
+          "description": "Get string length"
+        },
+        {
+          "command": "SELECT TRIM(column_name) FROM table_name;",
+          "description": "Remove leading/trailing spaces"
+        },
+        {
+          "command": "SELECT REPLACE(column_name, 'old', 'new') FROM table_name;",
+          "description": "Replace text in string"
+        }
+      ]
+    },
+    {
+      "name": "Date & Time Functions",
+      "shortcuts": [
+        {
+          "command": "SELECT NOW();",
+          "description": "Current date and time"
+        },
+        {
+          "command": "SELECT CURDATE();",
+          "description": "Current date"
+        },
+        {
+          "command": "SELECT CURTIME();",
+          "description": "Current time"
+        },
+        {
+          "command": "SELECT DATE_FORMAT(date_column, '%Y-%m-%d') FROM table_name;",
+          "description": "Format date"
+        },
+        {
+          "command": "SELECT DATE_ADD(date_column, INTERVAL 1 DAY) FROM table_name;",
+          "description": "Add time interval"
+        },
+        {
+          "command": "SELECT DATE_SUB(date_column, INTERVAL 1 MONTH) FROM table_name;",
+          "description": "Subtract time interval"
+        },
+        {
+          "command": "SELECT DATEDIFF(date1, date2);",
+          "description": "Calculate difference between dates"
+        },
+        {
+          "command": "SELECT YEAR(date_column), MONTH(date_column), DAY(date_column) FROM table_name;",
+          "description": "Extract date parts"
+        }
+      ]
+    }
+  ]
+}
