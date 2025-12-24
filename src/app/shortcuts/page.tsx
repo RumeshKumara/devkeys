@@ -97,6 +97,7 @@ export default function ShortcutsPage() {
                     <ShortcutCard
                       key={item.command}
                       {...item}
+                      category={category}
                     />
                   ))}
               </div>

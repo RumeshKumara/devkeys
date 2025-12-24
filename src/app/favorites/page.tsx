@@ -3,26 +3,48 @@
 import { Star, Heart, Sparkles, LogIn } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import { useAuth } from "@/context/AuthContext";
 import ShortcutCard from "@/components/ShortcutCard";
 
 export default function FavoritesPage() {
   const router = useRouter();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { user } = useAuth();
   const [favorites, setFavorites] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in
-    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
-    setIsLoggedIn(loggedIn);
+    const fetchFavorites = async () => {
+      if (!user) {
+        setFavorites([]);
+        setLoading(false);
+        return;
+      }
 
-    if (loggedIn) {
-      // Load favorites
-      const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-      setFavorites(savedFavorites);
-    }
-  }, []);
+      try {
+        const q = query(
+          collection(db, "favorites"),
+          where("uid", "==", user.uid)
+        );
 
-  if (!isLoggedIn) {
+        const snapshot = await getDocs(q);
+        const favs = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setFavorites(favs);
+      } catch (error) {
+        console.error("Error fetching favorites:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFavorites();
+  }, [user]);
+
+  if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center px-4">
         <div className="max-w-md w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-red-200 dark:border-red-800 p-8 rounded-2xl shadow-xl">
@@ -69,7 +91,13 @@ export default function FavoritesPage() {
         </div>
 
         {/* Favorites List or Empty State */}
-        {favorites.length === 0 ? (
+        {loading ? (
+          <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border-2 border-red-100 dark:border-red-900 shadow-lg p-12 hover:shadow-xl transition-all duration-300">
+            <div className="text-center">
+              <p className="text-gray-600 dark:text-gray-300">Loading favorites...</p>
+            </div>
+          </div>
+        ) : favorites.length === 0 ? (
           <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border-2 border-red-100 dark:border-red-900 shadow-lg p-12 hover:shadow-xl transition-all duration-300">
             <div className="text-center">
               <div className="flex justify-center mb-6">
@@ -94,12 +122,13 @@ export default function FavoritesPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {favorites.map((shortcut, index) => (
+            {favorites.map((shortcut) => (
               <ShortcutCard
-                key={index}
+                key={shortcut.id}
                 title={shortcut.title}
                 command={shortcut.command}
                 description={shortcut.description}
+                category={shortcut.category}
               />
             ))}
           </div>
