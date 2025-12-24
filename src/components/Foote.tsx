@@ -87,7 +87,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} DevKeys. All rights reserved.</p>
           <p className="flex items-center gap-1 mt-2 md:mt-0">
             Made with <Heart size={16} className="text-red-500 fill-red-500" />{" "}
-            by developers, for developers
+            by Rumesh Kumara, for Full Stack Developer
           </p>
         </div>
       </div>

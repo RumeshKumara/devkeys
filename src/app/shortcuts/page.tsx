@@ -108,7 +108,7 @@ export default function ShortcutsPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-white dark:bg-gray-800 text-red-500 hover:bg-red-600 border border-red-500 dark:border-red-600 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 hover:text-white"
+          className="fixed bottom-8 right-8 bg-white dark:bg-gray-800 text-red-500 hover:bg-red-600 border border-red-500 dark:border-red-600 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 hover:text-white animate-bounce"
           aria-label="Scroll to top"
         >
           <svg
