@@ -6,12 +6,32 @@ import { Sparkles, Send, Bot, Lightbulb, Zap } from "lucide-react";
 export default function AIPage() {
   const [prompt, setPrompt] = useState("");
   const [answer, setAnswer] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const askAI = async () => {
-    setIsLoading(true);
-    setAnswer("🤖 AI response will appear here...");
-    setIsLoading(false);
+    setLoading(true);
+    setAnswer(""); // Clear previous answer
+
+    try {
+      const res = await fetch("/api/gemini", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const data = await res.json();
+      
+      if (!res.ok) {
+        setAnswer(`Error: ${data.error || "Something went wrong"}`);
+      } else {
+        setAnswer(data.text);
+      }
+    } catch (error) {
+      console.error("Request failed:", error);
+      setAnswer("Error: Failed to connect to AI service. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,11 +89,11 @@ export default function AIPage() {
 
           <button
             onClick={askAI}
-            disabled={!prompt.trim() || isLoading}
+            disabled={!prompt.trim() || loading}
             className="mt-3 sm:mt-4 w-full sm:w-auto bg-gradient-to-r from-red-500 to-red-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:from-red-600 hover:to-red-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-105"
           >
             <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-            {isLoading ? "Thinking..." : "Ask AI"}
+            {loading ? "Thinking..." : "Ask AI"}
           </button>
         </div>
 
