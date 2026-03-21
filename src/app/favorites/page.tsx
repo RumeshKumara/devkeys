@@ -22,6 +22,12 @@ export default function FavoritesPage() {
         return;
       }
 
+      if (!db) {
+        setFavorites([]);
+        setLoading(false);
+        return;
+      }
+
       try {
         const q = query(
           collection(db, "favorites"),

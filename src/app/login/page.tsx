@@ -11,6 +11,11 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
+    if (!auth || !provider) {
+      setError("Firebase auth is not configured. Add NEXT_PUBLIC_FIREBASE_* variables.");
+      return;
+    }
+
     try {
       setLoading(true);
       setError(null);

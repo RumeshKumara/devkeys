@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import vscode from "@/data/vscode.json";
 import git from "@/data/git.json";
@@ -18,6 +18,14 @@ import ShortcutCard from "@/components/ShortcutCard";
 const dataMap: any = { vscode, git, linux, mysql, maven, npm, awscli, windows };
 
 export default function ShortcutsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" />}>
+      <ShortcutsPageContent />
+    </Suspense>
+  );
+}
+
+function ShortcutsPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const categoryParam = searchParams.get("category");

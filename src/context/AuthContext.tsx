@@ -10,6 +10,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
+    if (!auth) {
+      setUser(null);
+      return;
+    }
+
     return onAuthStateChanged(auth, setUser);
   }, []);
 

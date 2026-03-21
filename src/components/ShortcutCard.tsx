@@ -54,7 +54,7 @@ export default function ShortcutCard({
   }, [title, command, user]);
 
   const checkFavorite = async () => {
-    if (!user) return;
+    if (!user || !db) return;
     
     try {
       const q = query(
@@ -81,6 +81,10 @@ export default function ShortcutCard({
     if (!user) {
       // Redirect to login page
       router.push("/login");
+      return;
+    }
+
+    if (!db) {
       return;
     }
 

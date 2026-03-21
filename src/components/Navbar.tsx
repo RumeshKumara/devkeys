@@ -50,6 +50,14 @@ export default function Navbar() {
   }, [showDropdown, showMobileMenu]);
 
   const handleLogout = async () => {
+    if (!auth) {
+      localStorage.removeItem("isLoggedIn");
+      setShowDropdown(false);
+      setShowMobileMenu(false);
+      router.push("/");
+      return;
+    }
+
     try {
       await signOut(auth);
       localStorage.removeItem("isLoggedIn");
