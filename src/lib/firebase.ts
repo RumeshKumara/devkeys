@@ -1,3 +1,5 @@
+"use client";
+
 import { initializeApp, getApps } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -20,13 +22,23 @@ const hasFirebaseConfig = Boolean(
     firebaseConfig.appId
 );
 
-const app = hasFirebaseConfig
-  ? getApps().length === 0
-    ? initializeApp(firebaseConfig)
-    : getApps()[0]
-  : null;
+let app = null;
+let authInstance = null;
+let providerInstance = null;
+let dbInstance = null;
+
+if (hasFirebaseConfig) {
+  try {
+    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+    authInstance = getAuth(app);
+    providerInstance = new GoogleAuthProvider();
+    dbInstance = getFirestore(app);
+  } catch (error) {
+    console.error("Firebase initialization error:", error);
+  }
+}
 
 export const isFirebaseConfigured = hasFirebaseConfig;
-export const auth = app ? getAuth(app) : null;
-export const provider = auth ? new GoogleAuthProvider() : null;
-export const db = app ? getFirestore(app) : null;
+export const auth = authInstance;
+export const provider = providerInstance;
+export const db = dbInstance;
